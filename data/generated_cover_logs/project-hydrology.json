@@ -1,0 +1,32 @@
+{
+  "pair_id": "HOME-HYDRO",
+  "target_path": "/Users/alvin/Desktop/Yang1107-wzy.github.io/assets/project-hydrology.png",
+  "model": "google/gemini-2.5-flash-image",
+  "prompt": "Create a polished academic homepage cover for a flood forecasting and hydrological modelling project. Show a river basin or river network with remote-sensing style terrain or raster cues, water-flow analysis, and a clear forecasting research atmosphere. The scene should communicate spatiotemporal modeling, environmental data, and discharge prediction. No weather app icons, no cartoon clouds, no written text, no logo, no watermark.",
+  "response_summary": {
+    "id": "gen-1778692715-KojMNIlrg4fAB5ChlYvC",
+    "usage": {
+      "prompt_tokens": 79,
+      "completion_tokens": 1311,
+      "total_tokens": 1390,
+      "cost": 0.0387762,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0387762,
+        "upstream_inference_prompt_cost": 2.37e-05,
+        "upstream_inference_completions_cost": 0.0387525
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 1290,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

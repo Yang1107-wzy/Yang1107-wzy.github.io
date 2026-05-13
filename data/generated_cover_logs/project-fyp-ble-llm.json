@@ -1,0 +1,32 @@
+{
+  "pair_id": "HOME-FYP",
+  "target_path": "/Users/alvin/Desktop/Yang1107-wzy.github.io/assets/project-fyp-ble-llm.png",
+  "model": "google/gemini-2.5-flash-image",
+  "prompt": "Create a polished academic homepage cover for a real BLE-based indoor asset tracking final year project. Show an indoor lab, office, or storage space with several small BLE gateways or beacons placed in the environment, one tagged asset being tracked, and a restrained localization heat-zone or trajectory cue on the floor area. The mood should communicate practical sensing, RSSI-based localization, and diagnosable indoor tracking. No GPS map, no satellite, no highway, no autonomous car scene, no giant AI brain. No written text, no logo, no watermark, no cluttered dashboard UI.",
+  "response_summary": {
+    "id": "gen-1778692690-mnPVuS9qWoM10rUUY0yP",
+    "usage": {
+      "prompt_tokens": 117,
+      "completion_tokens": 1290,
+      "total_tokens": 1407,
+      "cost": 0.0387351,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0387351,
+        "upstream_inference_prompt_cost": 3.51e-05,
+        "upstream_inference_completions_cost": 0.0387
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 1290,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

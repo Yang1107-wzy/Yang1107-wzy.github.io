@@ -1,0 +1,32 @@
+{
+  "pair_id": "HOME-ARCHERY",
+  "target_path": "/Users/alvin/Desktop/Yang1107-wzy.github.io/assets/project-archery.png",
+  "model": "google/gemini-2.5-flash-image",
+  "prompt": "Create a polished academic homepage cover for an archery performance evaluation and intelligent selection project. Show an archery target, arrows, impact clustering, and a subtle motion-analysis or high-speed capture feeling. The image should convey measurement, performance evaluation, trajectory analysis, and equipment assessment, not a generic athlete advertisement. No stadium poster aesthetics, no giant heroic portrait, no written text, no logo, no watermark.",
+  "response_summary": {
+    "id": "gen-1778692707-dYDcrDfDSaMT1PVQadu9",
+    "usage": {
+      "prompt_tokens": 81,
+      "completion_tokens": 1322,
+      "total_tokens": 1403,
+      "cost": 0.0388043,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0388043,
+        "upstream_inference_prompt_cost": 2.43e-05,
+        "upstream_inference_completions_cost": 0.03878
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 1290,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "pair_id": "HOME-POSTURE",
+  "target_path": "/Users/alvin/Desktop/Yang1107-wzy.github.io/assets/project-startup-posture.png",
+  "model": "google/gemini-2.5-flash-image",
+  "prompt": "Create a polished academic homepage cover for a posture health innovation competition project. Show a realistic body-posture assessment scene with wearable or ambient sensing cues, posture alignment or imbalance, and restrained real-time feedback atmosphere. The scene should feel like multimodal health-tech system design and early-stage startup/competition planning, not a medical advertisement. No hospital brochure style, no written text, no logo, no watermark.",
+  "response_summary": {
+    "id": "gen-1778692730-Lxl12SayxLbslMi47AII",
+    "usage": {
+      "prompt_tokens": 83,
+      "completion_tokens": 1318,
+      "total_tokens": 1401,
+      "cost": 0.0387949,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0387949,
+        "upstream_inference_prompt_cost": 2.49e-05,
+        "upstream_inference_completions_cost": 0.03877
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 1290,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

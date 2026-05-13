@@ -1,0 +1,32 @@
+{
+  "pair_id": "HOME-CARDIAC",
+  "target_path": "/Users/alvin/Desktop/Yang1107-wzy.github.io/assets/project-cardiac-ultrasound.png",
+  "model": "google/gemini-2.5-flash-image",
+  "prompt": "Create a polished academic homepage cover for a real project on cardiac ultrasound benchmark and ST-CardioSeg. Show a medical imaging research scene centered on a fan-shaped echocardiography view with a precise left-ventricle segmentation contour overlay and a subtle sequence strip of neighboring ultrasound frames to imply temporal modeling and benchmarking. The image should feel like a serious lab-grade research visual, not a hospital advertisement. Use clean composition, neutral background, muted medical tones, one monitor or one dominant imaging surface, and subtle analytical structure. No written text, no logo, no watermark, no MRI slices, no CT, no full human anatomy, no blue futuristic HUD panels.",
+  "response_summary": {
+    "id": "gen-1778692683-08pPEf3BG8YmhT5NiUUa",
+    "usage": {
+      "prompt_tokens": 133,
+      "completion_tokens": 1290,
+      "total_tokens": 1423,
+      "cost": 0.0387399,
+      "is_byok": false,
+      "prompt_tokens_details": {
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "audio_tokens": 0,
+        "video_tokens": 0
+      },
+      "cost_details": {
+        "upstream_inference_cost": 0.0387399,
+        "upstream_inference_prompt_cost": 3.99e-05,
+        "upstream_inference_completions_cost": 0.0387
+      },
+      "completion_tokens_details": {
+        "reasoning_tokens": 0,
+        "image_tokens": 1290,
+        "audio_tokens": 0
+      }
+    }
+  }
+}

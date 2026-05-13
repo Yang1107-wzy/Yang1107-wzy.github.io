@@ -35,7 +35,7 @@ window.SITE_DATA = {
       title: "Cardiac Ultrasound Benchmark and ST-CardioSeg",
       status: "Primary Research",
       category: "Medical Imaging",
-      image: "/assets/st-net.png",
+      image: "/assets/project-cardiac-ultrasound.png",
       summary: "Unified CAMUS 4CH local-validation benchmark with ST-CardioSeg, MemSAM, CA-Net, MISSFormer, TransUNet, and MT-UNet under a shared evaluation protocol.",
       bullets: [
         "Main reportable setting is CAMUS 4CH official training subset local validation.",
@@ -52,7 +52,7 @@ window.SITE_DATA = {
       title: "BLE Asset Tracking with LLM-Assisted Diagnosis",
       status: "Current FYP",
       category: "Sensing System",
-      image: "/assets/profile.jpg",
+      image: "/assets/project-fyp-ble-llm.png",
       summary: "Final year project around BLE-based real-time asset tracking, with LLM modules placed in calibration, anomaly diagnosis, and natural-language operations rather than direct coordinate regression.",
       bullets: [
         "Grounded in a BNBU FYP topic focused on indoor asset tracking.",
@@ -69,7 +69,7 @@ window.SITE_DATA = {
       title: "MetaVision-DB for Multimodal Metaphor Games",
       status: "Dataset Build",
       category: "Benchmark",
-      image: "/assets/startup-posture.png",
+      image: "/assets/project-metavision-db.png",
       summary: "Dataset substrate for multimodal metaphor generation and reasoning in multi-agent games, with policies, schemas, quotas, provenance logs, validation scripts, and staged image-review workflows.",
       bullets: [
         "Phase 1 benchmark scaffold already includes schemas, protocols, seed tables, and validation.",
@@ -90,7 +90,7 @@ window.SITE_DATA = {
       category: "Sports Analytics",
       summary: "Supports the Olympic key project on smart arrow selection equipment and system R&D for LA 2028 preparation through shooting setup operation, release analysis, impact-score linkage, and straightness tracking.",
       metrics: ["High-speed camera", "Trajectory tracking", "LA 2028 prep"],
-      image: "/assets/life-1.jpg"
+      image: "/assets/project-archery.png"
     },
     {
       slug: "hydrology",
@@ -99,7 +99,7 @@ window.SITE_DATA = {
       category: "Remote Sensing + ML",
       summary: "Processes remote-sensing imagery and builds machine-learning pipelines for station discharge prediction and land-surface runoff integration in collaboration with UIC, Sun Yat-sen University, and Huawei.",
       metrics: ["Remote sensing", "Spatiotemporal ML", "Forecasting"],
-      image: "/assets/life-2.jpg"
+      image: "/assets/project-hydrology.png"
     },
     {
       slug: "cgf-height",
@@ -108,7 +108,7 @@ window.SITE_DATA = {
       category: "Applied Vision",
       summary: "Mobile-friendly RGB-D cargo height estimation system using center-guided segmentation and local ground-aware fusion for iOS depth sensing deployment.",
       metrics: ["RGB-D", "iOS", "HeightScanner API"],
-      image: "/assets/life-3.jpg"
+      image: "/assets/project-cgf-height.png"
     },
     {
       slug: "startup-posture",
@@ -117,7 +117,7 @@ window.SITE_DATA = {
       category: "Startup / Health Tech",
       summary: "Project line around multimodal sensor-based posture health monitoring, movement-library matching, and real-time feedback optimization, currently represented by technical route maps and single-page materials.",
       metrics: ["Multimodal sensors", "Posture health", "Route design"],
-      image: "/assets/startup-posture.png"
+      image: "/assets/project-startup-posture.png"
     },
     {
       slug: "wearable-sensor",
@@ -126,7 +126,7 @@ window.SITE_DATA = {
       category: "Sensor Research",
       summary: "Preparation line focused on ActiGraph devices, 24-hour activity behavior analysis, wear-time validation, sleep screening algorithms, and study protocol design.",
       metrics: ["ActiGraph", "24-hour behavior", "Sleep screening"],
-      image: "/assets/life-2.jpg"
+      image: "/assets/project-actigraph-sensor.png"
     }
   ],
   news: [
