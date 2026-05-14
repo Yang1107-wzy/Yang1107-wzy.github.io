@@ -204,21 +204,15 @@
       "/about/",
       `
       <main>
-        <section class="section">
-          <div class="section-header">
+        <section class="section about-page">
+          <div class="section-header about-header">
             <div>
               <h1 class="section-title">${isZh() ? "关于我" : "About"}</h1>
               <p class="section-description">${t(data.identity.intro)}</p>
             </div>
           </div>
-          <div class="split-layout">
-            <article class="panel detail-card panel-strong">
-              <h2 class="card-title">${isZh() ? "研究方向" : "Research Directions"}</h2>
-              <ul class="card-list">
-                ${data.about.researchLines.map((item) => `<li>${t(item)}</li>`).join("")}
-              </ul>
-            </article>
-            <article class="panel detail-card">
+          <div class="about-stack">
+            <article class="panel detail-card about-card">
               <h2 class="card-title">${isZh() ? "基本信息" : "At a Glance"}</h2>
               <table>
                 <tbody>
@@ -230,6 +224,12 @@
                   <tr><th>Website</th><td><a class="text-link" href="${data.identity.website}">${data.identity.website}</a></td></tr>
                 </tbody>
               </table>
+            </article>
+            <article class="panel detail-card panel-strong about-card">
+              <h2 class="card-title">${isZh() ? "研究方向" : "Research Directions"}</h2>
+              <ul class="card-list">
+                ${data.about.researchLines.map((item) => `<li>${t(item)}</li>`).join("")}
+              </ul>
             </article>
           </div>
         </section>
