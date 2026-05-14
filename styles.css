@@ -322,11 +322,13 @@ select {
 }
 
 .project-card,
+.home-project-card,
 .life-preview-card {
   overflow: hidden;
 }
 
 .project-card img,
+.home-project-card img,
 .publication-card img {
   width: 100%;
   border-radius: 16px;
@@ -337,6 +339,21 @@ select {
 
 .project-card img {
   aspect-ratio: 16 / 10;
+}
+
+.home-project-card img {
+  aspect-ratio: 16 / 11;
+}
+
+.home-project-copy {
+  display: grid;
+  gap: 10px;
+}
+
+.home-project-title {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
 }
 
 .publication-card img {

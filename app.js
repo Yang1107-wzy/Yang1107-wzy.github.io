@@ -82,6 +82,18 @@
     `;
   }
 
+  function renderHomeProjectCard(project, eager = false) {
+    return `
+      <article class="panel home-project-card">
+        ${imgMarkup(project.image, project.title, eager)}
+        <div class="home-project-copy">
+          <span class="card-tag">${project.category} · ${project.status}</span>
+          <h3 class="card-title project-title home-project-title">${project.title}</h3>
+        </div>
+      </article>
+    `;
+  }
+
   function renderPublication(pub, compact = false) {
     const extraClass = compact ? "sidebar-publication-card" : "publication-list-card";
     const titleTag = compact ? "h3" : "h2";
@@ -118,7 +130,7 @@
             </div>
           </div>
           <div class="panel hero-copy panel-strong">
-            <h1 class="hero-title">Zhengyang Wang<br />王正旸</h1>
+            <h1 class="hero-title">Zhengyang Wang (Alvin)<br />王正旸</h1>
             <p class="hero-kicker">${t(data.identity.intro)}</p>
             <div class="hero-actions">
               <a class="button primary" href="/projects/">${isZh() ? "查看项目" : "View Projects"}</a>
@@ -151,7 +163,7 @@
             <a class="text-link" href="/projects/">${isZh() ? "全部项目" : "All Projects"}</a>
           </div>
           <div class="grid-3">
-            ${data.featuredProjects.map((project, index) => renderProjectCard(project, "h3", index === 0)).join("")}
+            ${data.featuredProjects.map((project, index) => renderHomeProjectCard(project, index === 0)).join("")}
           </div>
         </section>
 
@@ -182,29 +194,6 @@
           <aside class="sticky-side">
             ${renderPublication(data.publications[0], true)}
           </aside>
-        </section>
-
-        <section class="section">
-          <div class="section-header">
-            <div>
-              <h2 class="section-title">Life</h2>
-              <p class="section-description">${t(data.life.overview)}</p>
-            </div>
-            <a class="text-link" href="/life/">${isZh() ? "查看生活部分" : "View Life"}</a>
-          </div>
-          <div class="life-preview-grid">
-            ${data.life.map.entries
-              .slice(0, 3)
-              .map(
-                (entry) => `
-                <article class="panel life-preview-card">
-                  <span class="card-tag">${entry.city} · ${entry.province}</span>
-                  <h3 class="card-title" style="margin-top:12px;">${entry.city}</h3>
-                  <p class="card-text">${t(entry.description)}</p>
-                </article>`
-              )
-              .join("")}
-          </div>
         </section>
       </main>`
     );
