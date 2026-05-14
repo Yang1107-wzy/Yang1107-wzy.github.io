@@ -119,8 +119,8 @@
                 (project) => `
                 <article class="panel project-card">
                   ${imgMarkup(project.image, project.title, true)}
-                  <span class="card-tag${accentClass(project.accent)}">${project.status}</span>
-                  <h3 class="card-title project-title${accentClass(project.accent)}">${project.title}</h3>
+                  <span class="card-tag accent-status">${project.status}</span>
+                  <h3 class="card-title project-title">${project.title}</h3>
                   <p class="card-text">${project.summary}</p>
                   <div class="metric-row">${project.metrics.map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
                 </article>`
@@ -157,7 +157,7 @@
               ${imgMarkup(data.publications[0].image, data.publications[0].title)}
               <div>
                 <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
-              <h3 class="card-title">${data.publications[0].title}</h3>
+                <h3 class="card-title" style="margin-top:12px;max-width:14ch;line-height:1.12;font-size:1.15rem;">${data.publications[0].title}</h3>
                 <p class="publication-meta">${data.publications[0].authors}</p>
                 <p class="publication-meta" style="margin-top:10px;">${data.publications[0].note}</p>
                 <div class="link-row">
@@ -236,8 +236,8 @@
                 (project) => `
                 <article class="panel project-card">
                   ${imgMarkup(project.image, project.title)}
-                  <span class="card-tag${accentClass(project.accent)}">${project.category} · ${project.status}</span>
-                  <h2 class="card-title project-title${accentClass(project.accent)}">${project.title}</h2>
+                  <span class="card-tag accent-status">${project.category} · ${project.status}</span>
+                  <h2 class="card-title project-title">${project.title}</h2>
                   <p class="card-text">${project.summary}</p>
                   <div class="metric-row">${(project.metrics || []).map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
                   ${project.bullets ? `<ul class="card-list" style="margin-top:14px;">${project.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
@@ -298,11 +298,11 @@
           ${data.publications
             .map(
               (pub) => `
-                <article class="panel publication-card">
-                  ${imgMarkup(pub.image, pub.title)}
-                  <div>
+              <article class="panel publication-card">
+                ${imgMarkup(pub.image, pub.title)}
+                <div>
                   <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
-                  <h2 class="card-title">${pub.title}</h2>
+                  <h2 class="card-title" style="margin-top:12px;max-width:16ch;line-height:1.12;">${pub.title}</h2>
                   <p class="publication-meta">${pub.authors}</p>
                   <p class="publication-meta" style="margin-top:10px;">${pub.note}</p>
                   <div class="link-row">
