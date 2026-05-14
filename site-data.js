@@ -173,7 +173,7 @@ window.SITE_DATA = {
       note: "Under review",
       accent: "neurips",
       authors: "Ruijie Huang, Weifeng Su, Yuxiang He, Zhengyang Wang, Xingyu Chen, and collaborators",
-      image: "/assets/st-net-display.webp",
+      image: "/assets/project-cardiac-ultrasound-display.webp",
       links: [
         { label: "OpenReview", href: "https://openreview.net/forum?id=Nw0WyiydFA" }
       ]
@@ -224,9 +224,31 @@ window.SITE_DATA = {
       "Computer vision prototyping, evaluation pipelines, structured dataset curation"
     ]
   },
-  lifeGallery: [
-    { src: "/assets/life-1.jpg", caption: "Study and project moments" },
-    { src: "/assets/life-2.jpg", caption: "Team activities and daily records" },
-    { src: "/assets/life-3.jpg", caption: "Snapshots outside the lab" }
-  ]
+  travelMap: {
+    center: [35.8617, 104.1954],
+    zoom: 4,
+    entries: [
+      {
+        name: "Zhuhai, Guangdong",
+        lat: 22.2710,
+        lng: 113.5767,
+        description: "Long-term base around BNBU and daily academic life in southern China.",
+        photo: ""
+      },
+      {
+        name: "Guangzhou, Guangdong",
+        lat: 23.1291,
+        lng: 113.2644,
+        description: "Bank internship and repeated city visits tied to work and travel.",
+        photo: ""
+      },
+      {
+        name: "Beijing",
+        lat: 39.9042,
+        lng: 116.4074,
+        description: "Competition and project travel connected to the posture-health innovation line.",
+        photo: ""
+      }
+    ]
+  }
 };

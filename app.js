@@ -29,7 +29,7 @@
       ["News", "/news/", "动态"],
       ["Publications", "/publications/", "论文"],
       ["CV", "/cv/", "简历"],
-      ["Life", "/life/", "生活"]
+      ["Travel", "/life/", "足迹"]
     ];
     return items
       .map(([en, href, zh]) => {
@@ -52,7 +52,7 @@
           <div class="nav-links">${nav(pathname)}</div>
           <div class="nav-tools">
             <button class="lang-button" id="lang-toggle">${isZh ? "EN" : "中文"}</button>
-            <button class="icon-button" id="theme-toggle">${isZh ? "明暗" : "Theme"}</button>
+            <button class="icon-button" id="theme-toggle">${isZh ? "主题" : "Theme"}</button>
           </div>
         </nav>
         ${main}
@@ -157,7 +157,7 @@
               ${imgMarkup(data.publications[0].image, data.publications[0].title)}
               <div>
                 <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
-                <h3 class="card-title" style="margin-top:12px;max-width:14ch;line-height:1.12;font-size:1.15rem;">${data.publications[0].title}</h3>
+                <h3 class="card-title" style="margin-top:12px;line-height:1.14;font-size:1.45rem;">${data.publications[0].title}</h3>
                 <p class="publication-meta">${data.publications[0].authors}</p>
                 <p class="publication-meta" style="margin-top:10px;">${data.publications[0].note}</p>
                 <div class="link-row">
@@ -302,7 +302,7 @@
                 ${imgMarkup(pub.image, pub.title)}
                 <div>
                   <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
-                  <h2 class="card-title" style="margin-top:12px;max-width:16ch;line-height:1.12;">${pub.title}</h2>
+                  <h2 class="card-title" style="margin-top:12px;line-height:1.14;">${pub.title}</h2>
                   <p class="publication-meta">${pub.authors}</p>
                   <p class="publication-meta" style="margin-top:10px;">${pub.note}</p>
                   <div class="link-row">
@@ -354,6 +354,7 @@
 
   function lifePage() {
     const isZh = root.lang.startsWith("zh");
+    const entries = data.travelMap.entries || [];
     return shell(
       "/life/",
       `
@@ -361,20 +362,28 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "生活切片" : "Life"}</h1>
-              <p class="section-description">${isZh ? "按照你的要求，这一页只放生活图集，不混项目说明。现在先用本地可确认的照片做第一版占位，后续可以继续替换精选图片。" : "Per your decision, this page stays as a life gallery rather than a project log. The current version uses verifiable local photos and can be curated further later."}</p>
+              <h1 class="section-title">${isZh ? "旅行足迹" : "Travel Footprints"}</h1>
+              <p class="section-description">${isZh ? "使用开源地图底图，以中国为视角展示我去过的地点。后续可以继续补充城市、省市、照片和描述。" : "An open-source world map centered on China for places I have visited. This structure can be extended with more cities, provinces, photos, and notes."}</p>
             </div>
           </div>
-          <div class="gallery-grid">
-            ${data.lifeGallery
-              .map(
-                (item) => `
-                <article class="panel gallery-card">
-                  <img src="${item.src}" alt="${item.caption}" />
-                  <p class="card-text" style="margin-top:12px;">${item.caption}</p>
-                </article>`
-              )
-              .join("")}
+          <div class="travel-layout">
+            <div class="panel travel-map-shell">
+              <div id="travel-map"></div>
+            </div>
+            <div class="travel-cards">
+              ${entries
+                .map(
+                  (item) => `
+                  <article class="panel travel-card">
+                    <div class="travel-card-head">
+                      <span class="travel-dot"></span>
+                      <h3 class="card-title" style="margin:0;">${item.name}</h3>
+                    </div>
+                    <p class="card-text">${item.description}</p>
+                  </article>`
+                )
+                .join("")}
+            </div>
           </div>
         </section>
       </main>`
@@ -410,6 +419,56 @@
       localStorage.setItem("wzy-lang", root.lang);
       render();
     });
+    if (path === "/life/") {
+      initializeTravelMap();
+    }
+  }
+
+  function initializeTravelMap() {
+    function boot() {
+      const mapNode = document.getElementById("travel-map");
+      if (!mapNode || !window.L) return;
+      if (mapNode.dataset.ready === "1") return;
+      mapNode.dataset.ready = "1";
+      const map = window.L.map(mapNode, {
+        zoomControl: true,
+        attributionControl: true
+      }).setView(data.travelMap.center, data.travelMap.zoom);
+      window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 18,
+        attribution: "&copy; OpenStreetMap contributors"
+      }).addTo(map);
+      (data.travelMap.entries || []).forEach((entry) => {
+        const marker = window.L.circleMarker([entry.lat, entry.lng], {
+          radius: 7,
+          color: "#ffffff",
+          weight: 1,
+          fillColor: "#7c9cff",
+          fillOpacity: 0.9
+        }).addTo(map);
+        marker.bindPopup(`<strong>${entry.name}</strong><br/>${entry.description}`);
+      });
+    }
+
+    if (window.L) {
+      boot();
+      return;
+    }
+
+    if (!document.getElementById("leaflet-css")) {
+      const link = document.createElement("link");
+      link.id = "leaflet-css";
+      link.rel = "stylesheet";
+      link.href = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.css";
+      document.head.appendChild(link);
+    }
+    if (!document.getElementById("leaflet-js")) {
+      const script = document.createElement("script");
+      script.id = "leaflet-js";
+      script.src = "https://unpkg.com/leaflet@1.9.4/dist/leaflet.js";
+      script.onload = boot;
+      document.head.appendChild(script);
+    }
   }
 
   render();
