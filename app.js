@@ -157,7 +157,7 @@
               ${imgMarkup(data.publications[0].image, data.publications[0].title)}
               <div>
                 <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
-                <h3 class="card-title">${data.publications[0].title}</h3>
+              <h3 class="card-title">${data.publications[0].title}</h3>
                 <p class="publication-meta">${data.publications[0].authors}</p>
                 <p class="publication-meta" style="margin-top:10px;">${data.publications[0].note}</p>
                 <div class="link-row">
@@ -298,9 +298,9 @@
           ${data.publications
             .map(
               (pub) => `
-              <article class="panel publication-card">
-                ${imgMarkup(pub.image, pub.title)}
-                <div>
+                <article class="panel publication-card">
+                  ${imgMarkup(pub.image, pub.title)}
+                  <div>
                   <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
                   <h2 class="card-title">${pub.title}</h2>
                   <p class="publication-meta">${pub.authors}</p>

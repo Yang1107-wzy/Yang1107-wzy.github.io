@@ -174,9 +174,9 @@ window.SITE_DATA = {
       title: "Decoupling Morphology and Coherence for High-Fidelity 4D Cardiac Segmentation",
       venue: "NeurIPS 2026",
       note: "Under review",
+      accent: "neurips",
       authors: "Ruijie Huang, Weifeng Su, Yuxiang He, Zhengyang Wang, Xingyu Chen, and collaborators",
       image: "/assets/st-net-display.webp",
-      accent: "neurips",
       links: [
         { label: "OpenReview", href: "https://openreview.net/forum?id=Nw0WyiydFA" }
       ]
