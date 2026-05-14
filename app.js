@@ -141,20 +141,6 @@
         </section>
 
         <section class="section">
-          <div class="grid-3">
-            ${data.stats
-              .map(
-                (item) => `
-                <article class="panel stat-card">
-                  <div class="card-tag">${item.label}</div>
-                  <h2 class="hero-title stat-value">${item.value}</h2>
-                </article>`
-              )
-              .join("")}
-          </div>
-        </section>
-
-        <section class="section">
           <div class="section-header">
             <div>
               <h2 class="section-title">${isZh() ? "代表项目" : "Selected Projects"}</h2>
