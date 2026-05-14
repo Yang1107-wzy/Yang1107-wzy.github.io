@@ -1,9 +1,8 @@
 (function () {
   const data = window.SITE_DATA;
   const root = document.documentElement;
-  const savedTheme = localStorage.getItem("wzy-theme");
   const savedLang = localStorage.getItem("wzy-lang");
-  root.dataset.theme = savedTheme || "dark";
+  root.dataset.theme = "dark";
   root.lang = savedLang || root.lang || "en";
 
   function t(entry) {
@@ -12,13 +11,13 @@
     return entry?.[lang] || entry?.en || "";
   }
 
+  function isZh() {
+    return root.lang.startsWith("zh");
+  }
+
   function imgMarkup(src, alt, eager = false) {
     const loading = eager ? "eager" : "lazy";
     return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async" />`;
-  }
-
-  function accentClass(value) {
-    return value ? ` accent-${value}` : "";
   }
 
   function nav(pathname) {
@@ -29,43 +28,80 @@
       ["News", "/news/", "动态"],
       ["Publications", "/publications/", "论文"],
       ["CV", "/cv/", "简历"],
-      ["Travel", "/life/", "足迹"]
+      ["Life", "/life/", "生活"]
     ];
     return items
       .map(([en, href, zh]) => {
         const active = pathname === href ? " active" : "";
-        const label = root.lang.startsWith("zh") ? zh : en;
-        return `<a class="nav-link${active}" href="${href}">${label}</a>`;
+        return `<a class="nav-link${active}" href="${href}">${isZh() ? zh : en}</a>`;
       })
       .join("");
   }
 
   function shell(pathname, main) {
-    const isZh = root.lang.startsWith("zh");
     return `
       <div class="site-shell">
         <nav class="site-nav">
           <a class="brand-lockup" href="/">
             <span class="brand-title">Zhengyang Wang / 王正旸</span>
-            <span class="brand-subtitle">${isZh ? "研究型本科生 · 计算机科学" : "Research-oriented undergraduate · Computer Science"}</span>
+            <span class="brand-subtitle">${isZh() ? "计算机科学本科生" : "Undergraduate in Computer Science"}</span>
           </a>
           <div class="nav-links">${nav(pathname)}</div>
           <div class="nav-tools">
-            <button class="lang-button" id="lang-toggle">${isZh ? "EN" : "中文"}</button>
-            <button class="icon-button" id="theme-toggle">${isZh ? "主题" : "Theme"}</button>
+            <button class="lang-button" id="lang-toggle">${isZh() ? "EN" : "中文"}</button>
           </div>
         </nav>
         ${main}
         <footer class="footer">
-          <div>© 2026 Zhengyang Wang · ${isZh ? "基于真实桌面项目材料整理" : "Grounded in real local project materials"}</div>
-          <div><a class="text-link" href="${data.identity.github}" target="_blank" rel="noreferrer">GitHub</a> · <a class="text-link" href="mailto:${data.identity.email}">Email</a></div>
+          <div>© 2026 Zhengyang Wang</div>
+          <div>
+            <a class="text-link" href="${data.identity.github}" target="_blank" rel="noreferrer">GitHub</a>
+            ·
+            <a class="text-link" href="mailto:${data.identity.email}">Email</a>
+          </div>
         </footer>
       </div>
     `;
   }
 
+  function renderProjectCard(project, headingTag, eager = false) {
+    const heading = headingTag || "h3";
+    return `
+      <article class="panel project-card">
+        ${imgMarkup(project.image, project.title, eager)}
+        <span class="card-tag">${project.category} · ${project.status}</span>
+        <${heading} class="card-title project-title">${project.title}</${heading}>
+        <p class="card-text">${t(project.summary)}</p>
+        <div class="metric-row">${(project.metrics || []).map((item) => `<span class="metric-pill">${item}</span>`).join("")}</div>
+        ${
+          project.bullets
+            ? `<ul class="card-list" style="margin-top:14px;">${project.bullets.map((item) => `<li>${t(item)}</li>`).join("")}</ul>`
+            : ""
+        }
+      </article>
+    `;
+  }
+
+  function renderPublication(pub, compact = false) {
+    const extraClass = compact ? "sidebar-publication-card" : "publication-list-card";
+    const titleTag = compact ? "h3" : "h2";
+    return `
+      <article class="panel publication-card ${extraClass}">
+        ${imgMarkup(pub.image, pub.title)}
+        <div>
+          <span class="card-tag">${pub.venue}</span>
+          <${titleTag} class="card-title publication-title">${pub.title}</${titleTag}>
+          <p class="publication-meta">${pub.authors}</p>
+          <p class="publication-meta" style="margin-top:10px;">${t(pub.note)}</p>
+          <div class="link-row">
+            ${pub.links.map((link) => `<a class="button" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}
+          </div>
+        </div>
+      </article>
+    `;
+  }
+
   function homePage() {
-    const isZh = root.lang.startsWith("zh");
     return shell(
       "/",
       `
@@ -73,25 +109,26 @@
         <section class="hero section">
           <div class="panel hero-photo-card panel-strong">
             <div class="hero-photo">
-              <img src="${data.identity.profileImage}" alt="Zhengyang Wang portrait" />
+              ${imgMarkup(data.identity.profileImage, "Zhengyang Wang portrait", true)}
             </div>
             <div class="hero-badges">
               <span class="badge">BNBU</span>
-              <span class="badge">Medical Imaging</span>
-              <span class="badge">Multimodal LLM</span>
+              <span class="badge">Medical Image Analysis</span>
+              <span class="badge">Computer Vision</span>
             </div>
           </div>
           <div class="panel hero-copy panel-strong">
-            <span class="eyebrow">${isZh ? "当前在建站升级" : "Site rebuild in progress"}</span>
+            <span class="eyebrow">${isZh() ? "个人主页" : "Academic Homepage"}</span>
             <h1 class="hero-title">Zhengyang Wang<br />王正旸</h1>
             <p class="hero-kicker">${t(data.identity.intro)}</p>
             <div class="hero-actions">
-              <a class="button primary" href="/projects/">${isZh ? "查看项目全景" : "View projects"}</a>
-              <a class="button" href="/cv/">${isZh ? "查看新版 CV" : "Open CV"}</a>
-              <a class="button" href="mailto:${data.identity.email}">${isZh ? "联系我" : "Contact"}</a>
+              <a class="button primary" href="/projects/">${isZh() ? "查看项目" : "View Projects"}</a>
+              <a class="button" href="/publications/">${isZh() ? "查看论文" : "View Publications"}</a>
+              <a class="button" href="/cv/">${isZh() ? "查看简历" : "View CV"}</a>
             </div>
           </div>
         </section>
+
         <section class="section">
           <div class="grid-3">
             ${data.stats
@@ -99,41 +136,32 @@
                 (item) => `
                 <article class="panel stat-card">
                   <div class="card-tag">${item.label}</div>
-                  <h2 class="hero-title" style="font-size:2.3rem;margin:14px 0 0;">${item.value}</h2>
+                  <h2 class="hero-title stat-value">${item.value}</h2>
                 </article>`
               )
               .join("")}
           </div>
         </section>
+
         <section class="section">
           <div class="section-header">
             <div>
-              <h2 class="section-title">${isZh ? "精选项目" : "Featured Projects"}</h2>
-              <p class="section-description">${isZh ? "不是课程作业堆砌，而是当前真正持续推进的研究与系统线。" : "These are the lines I am actively pushing forward, not just archived coursework."}</p>
+              <h2 class="section-title">${isZh() ? "代表项目" : "Selected Projects"}</h2>
+              <p class="section-description">${isZh() ? "以下内容概括当前持续推进的研究与系统工作。" : "The following entries summarize current research and system work."}</p>
             </div>
-            <a class="text-link" href="/projects/">${isZh ? "查看全部项目" : "All projects"}</a>
+            <a class="text-link" href="/projects/">${isZh() ? "全部项目" : "All Projects"}</a>
           </div>
           <div class="grid-3">
-            ${data.featuredProjects
-              .map(
-                (project) => `
-                <article class="panel project-card">
-                  ${imgMarkup(project.image, project.title, true)}
-                  <span class="card-tag accent-status">${project.status}</span>
-                  <h3 class="card-title project-title">${project.title}</h3>
-                  <p class="card-text">${project.summary}</p>
-                  <div class="metric-row">${project.metrics.map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
-                </article>`
-              )
-              .join("")}
+            ${data.featuredProjects.map((project, index) => renderProjectCard(project, "h3", index === 0)).join("")}
           </div>
         </section>
+
         <section class="section split-layout">
           <div>
             <div class="section-header">
               <div>
-                <h2 class="section-title">${isZh ? "最近动态" : "Recent News"}</h2>
-                <p class="section-description">${isZh ? "只保留能和本地文件、实验或明确进度对应的动态。" : "Only timeline items that can be tied back to local files, experiments, or concrete milestones."}</p>
+                <h2 class="section-title">${isZh() ? "近期动态" : "Recent Updates"}</h2>
+                <p class="section-description">${isZh() ? "仅保留能够与论文、项目、实验或正式成果对应的节点。" : "Only milestones that correspond to papers, projects, experiments, or formal outcomes are listed here."}</p>
               </div>
             </div>
             <div class="timeline">
@@ -144,8 +172,8 @@
                   <article class="timeline-item">
                     <div class="timeline-date">${item.date}</div>
                     <div>
-                      <h3 class="card-title" style="margin-top:0;">${item.title}</h3>
-                      <p class="timeline-text">${item.text}</p>
+                      <h3 class="card-title" style="margin-top:0;">${t(item.title)}</h3>
+                      <p class="timeline-text">${t(item.text)}</p>
                     </div>
                   </article>`
                 )
@@ -153,28 +181,37 @@
             </div>
           </div>
           <aside class="sticky-side">
-            <article class="panel publication-card sidebar-publication-card">
-              ${imgMarkup(data.publications[0].image, data.publications[0].title)}
-              <div>
-                <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
-                <h3 class="card-title" style="margin-top:12px;line-height:1.14;font-size:1.45rem;">${data.publications[0].title}</h3>
-                <p class="publication-meta">${data.publications[0].authors}</p>
-                <p class="publication-meta" style="margin-top:10px;">${data.publications[0].note}</p>
-                <div class="link-row">
-                  ${data.publications[0].links
-                    .map((link) => `<a class="button" target="_blank" rel="noreferrer" href="${link.href}">${link.label}</a>`)
-                    .join("")}
-                </div>
-              </div>
-            </article>
+            ${renderPublication(data.publications[0], true)}
           </aside>
+        </section>
+
+        <section class="section">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Life</h2>
+              <p class="section-description">${t(data.life.overview)}</p>
+            </div>
+            <a class="text-link" href="/life/">${isZh() ? "查看生活部分" : "View Life"}</a>
+          </div>
+          <div class="life-preview-grid">
+            ${data.life.map.entries
+              .slice(0, 3)
+              .map(
+                (entry) => `
+                <article class="panel life-preview-card">
+                  <span class="card-tag">${entry.city} · ${entry.province}</span>
+                  <h3 class="card-title" style="margin-top:12px;">${entry.city}</h3>
+                  <p class="card-text">${t(entry.description)}</p>
+                </article>`
+              )
+              .join("")}
+          </div>
         </section>
       </main>`
     );
   }
 
   function aboutPage() {
-    const isZh = root.lang.startsWith("zh");
     return shell(
       "/about/",
       `
@@ -182,23 +219,19 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "关于我" : "About"}</h1>
+              <h1 class="section-title">${isZh() ? "关于我" : "About"}</h1>
               <p class="section-description">${t(data.identity.intro)}</p>
             </div>
           </div>
           <div class="split-layout">
             <article class="panel detail-card panel-strong">
-              <h2 class="card-title">${isZh ? "研究主线" : "Current Research Lines"}</h2>
+              <h2 class="card-title">${isZh() ? "研究方向" : "Research Directions"}</h2>
               <ul class="card-list">
-                <li>Cardiac ultrasound benchmarking and reportable local-validation evidence chains.</li>
-                <li>BLE asset tracking systems where LLMs assist diagnosis and calibration instead of replacing signal models.</li>
-                <li>MetaVision-DB for multimodal metaphor reasoning games and benchmark construction.</li>
-                <li>Sports analytics and arrow-quality evaluation for Olympic preparation workflows.</li>
-                <li>ActiGraph-based motion and sleep sensing study preparation.</li>
+                ${data.about.researchLines.map((item) => `<li>${t(item)}</li>`).join("")}
               </ul>
             </article>
             <article class="panel detail-card">
-              <h2 class="card-title">${isZh ? "基本信息" : "At a Glance"}</h2>
+              <h2 class="card-title">${isZh() ? "基本信息" : "At a Glance"}</h2>
               <table>
                 <tbody>
                   <tr><th>Name</th><td>${data.identity.fullName}</td></tr>
@@ -217,7 +250,6 @@
   }
 
   function projectsPage() {
-    const isZh = root.lang.startsWith("zh");
     const projects = [...data.featuredProjects, ...data.allProjects];
     return shell(
       "/projects/",
@@ -226,24 +258,12 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "项目地图" : "Projects"}</h1>
-              <p class="section-description">${isZh ? "当前站点中的项目全部来自本地真实目录、CV、README、阶段性报告和结果摘要。" : "Each project entry is grounded in actual local folders, CV material, READMEs, and evidence-bearing summaries."}</p>
+              <h1 class="section-title">${isZh() ? "项目" : "Projects"}</h1>
+              <p class="section-description">${isZh() ? "项目条目基于本地项目目录、报告、README 与阶段性结果整理。" : "Project entries are compiled from local workspaces, reports, READMEs, and stage summaries."}</p>
             </div>
           </div>
           <div class="grid-2">
-            ${projects
-              .map(
-                (project) => `
-                <article class="panel project-card">
-                  ${imgMarkup(project.image, project.title)}
-                  <span class="card-tag accent-status">${project.category} · ${project.status}</span>
-                  <h2 class="card-title project-title">${project.title}</h2>
-                  <p class="card-text">${project.summary}</p>
-                  <div class="metric-row">${(project.metrics || []).map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
-                  ${project.bullets ? `<ul class="card-list" style="margin-top:14px;">${project.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
-                </article>`
-              )
-              .join("")}
+            ${projects.map((project) => renderProjectCard(project, "h2")).join("")}
           </div>
         </section>
       </main>`
@@ -251,7 +271,6 @@
   }
 
   function newsPage() {
-    const isZh = root.lang.startsWith("zh");
     return shell(
       "/news/",
       `
@@ -259,8 +278,8 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "时间线动态" : "News"}</h1>
-              <p class="section-description">${isZh ? "只记录可验证的节点：论文状态、项目里程碑、站点重建、实验协议和正式奖项。" : "The timeline keeps only verifiable milestones: paper status, project checkpoints, site rebuilds, formal awards, and protocol-level changes."}</p>
+              <h1 class="section-title">${isZh() ? "动态" : "News"}</h1>
+              <p class="section-description">${isZh() ? "本页记录近期与研究、项目、论文和正式成果相关的节点。" : "This page records recent milestones related to research, projects, papers, and formal outcomes."}</p>
             </div>
           </div>
           <div class="timeline">
@@ -270,8 +289,8 @@
                 <article class="timeline-item">
                   <div class="timeline-date">${item.date}</div>
                   <div>
-                    <h2 class="card-title" style="margin-top:0;">${item.title}</h2>
-                    <p class="timeline-text">${item.text}</p>
+                    <h2 class="card-title" style="margin-top:0;">${t(item.title)}</h2>
+                    <p class="timeline-text">${t(item.text)}</p>
                   </div>
                 </article>`
               )
@@ -283,7 +302,6 @@
   }
 
   function publicationsPage() {
-    const isZh = root.lang.startsWith("zh");
     return shell(
       "/publications/",
       `
@@ -291,34 +309,17 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "论文与在审工作" : "Publications"}</h1>
-              <p class="section-description">${isZh ? "这里不会夸大未落地结果；只保留已明确存在的条目和状态。" : "This page avoids inflating claims. It only lists items that are explicitly present in current local or online materials."}</p>
+              <h1 class="section-title">${isZh() ? "论文与在审工作" : "Publications"}</h1>
+              <p class="section-description">${isZh() ? "仅列出当前已明确存在的论文条目与状态。" : "Only publication entries and statuses that are currently explicit are listed."}</p>
             </div>
           </div>
-          ${data.publications
-            .map(
-              (pub) => `
-              <article class="panel publication-card publication-list-card">
-                ${imgMarkup(pub.image, pub.title)}
-                <div>
-                  <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
-                  <h2 class="card-title" style="margin-top:12px;line-height:1.14;">${pub.title}</h2>
-                  <p class="publication-meta">${pub.authors}</p>
-                  <p class="publication-meta" style="margin-top:10px;">${pub.note}</p>
-                  <div class="link-row">
-                    ${pub.links.map((link) => `<a class="button" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}
-                  </div>
-                </div>
-              </article>`
-            )
-            .join("")}
+          ${data.publications.map((pub) => renderPublication(pub, false)).join("")}
         </section>
       </main>`
     );
   }
 
   function cvPage() {
-    const isZh = root.lang.startsWith("zh");
     return shell(
       "/cv/",
       `
@@ -326,24 +327,24 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "新版简历" : "Curriculum Vitae"}</h1>
-              <p class="section-description">${isZh ? "网页版 CV 已补入心脏项目、MetaVision、FYP、大创赛和传感器筹备线。PDF 下载会在发布版里同步提供。" : "The web CV now reflects the cardiac benchmark line, MetaVision, the BLE FYP, the startup competition, and the motion-sensor preparation track."}</p>
+              <h1 class="section-title">${isZh() ? "简历" : "Curriculum Vitae"}</h1>
+              <p class="section-description">${isZh() ? "网页版本概括当前教育背景、研究与项目经历、奖项与技能。" : "The web version summarizes current education, research and project experience, awards, and skills."}</p>
             </div>
           </div>
           <div class="split-layout">
             <div class="panel detail-card panel-strong">
-              <h2 class="card-title">${isZh ? "教育经历" : "Education"}</h2>
-              ${data.cv.education.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${item.text}</p></div>`).join("")}
-              <h2 class="card-title">${isZh ? "研究与项目" : "Research and Projects"}</h2>
-              ${data.cv.research.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${item.text}</p></div>`).join("")}
+              <h2 class="card-title">${isZh() ? "教育经历" : "Education"}</h2>
+              ${data.cv.education.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`).join("")}
+              <h2 class="card-title">${isZh() ? "研究与项目" : "Research and Projects"}</h2>
+              ${data.cv.research.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`).join("")}
             </div>
             <div class="panel detail-card">
-              <h2 class="card-title">${isZh ? "奖项" : "Awards"}</h2>
+              <h2 class="card-title">${isZh() ? "奖项" : "Awards"}</h2>
               <ul class="card-list">${data.cv.awards.map((item) => `<li>${item}</li>`).join("")}</ul>
-              <h2 class="card-title" style="margin-top:26px;">${isZh ? "技能" : "Skills"}</h2>
+              <h2 class="card-title" style="margin-top:26px;">${isZh() ? "技能" : "Skills"}</h2>
               <ul class="card-list">${data.cv.skills.map((item) => `<li>${item}</li>`).join("")}</ul>
               <div class="hero-actions" style="margin-top:26px;">
-                <a class="button primary" href="/assets/Zhengyang_WANG_Alvin_CV.pdf">${isZh ? "下载 PDF" : "Download PDF"}</a>
+                <a class="button primary" href="${data.identity.cvPdf}">${isZh() ? "下载 PDF" : "Download PDF"}</a>
               </div>
             </div>
           </div>
@@ -352,9 +353,28 @@
     );
   }
 
+  function renderLifeGroup(title, items) {
+    if (!items || !items.length) return "";
+    return `
+      <section class="interest-section">
+        <h2 class="card-title interest-title">${title}</h2>
+        <div class="interest-grid">
+          ${items
+            .map(
+              (item) => `
+              <article class="panel interest-card">
+                <h3 class="card-title interest-card-title">${item.name}</h3>
+                <p class="card-text">${t(item.description)}</p>
+              </article>`
+            )
+            .join("")}
+        </div>
+      </section>
+    `;
+  }
+
   function lifePage() {
-    const isZh = root.lang.startsWith("zh");
-    const entries = data.travelMap.entries || [];
+    const entries = data.life.map.entries || [];
     return shell(
       "/life/",
       `
@@ -362,12 +382,16 @@
         <section class="section">
           <div class="section-header">
             <div>
-              <h1 class="section-title">${isZh ? "旅行足迹" : "Travel Footprints"}</h1>
-              <p class="section-description">${isZh ? "使用开源地图底图，以中国为视角展示我去过的地点。后续可以继续补充城市、省市、照片和描述。" : "An open-source world map centered on China for places I have visited. This structure can be extended with more cities, provinces, photos, and notes."}</p>
+              <h1 class="section-title">Life</h1>
+              <p class="section-description">${t(data.life.overview)}</p>
             </div>
           </div>
           <div class="travel-layout">
             <div class="panel travel-map-shell">
+              <div class="map-copy">
+                <span class="card-tag">${isZh() ? "地理足迹" : "Geographic Footprint"}</span>
+                <p class="card-text map-intro">${t(data.life.map.intro)}</p>
+              </div>
               <div id="travel-map"></div>
             </div>
             <div class="travel-cards">
@@ -377,15 +401,27 @@
                   <article class="panel travel-card">
                     <div class="travel-card-head">
                       <span class="travel-dot"></span>
-                      <h3 class="card-title" style="margin:0;">${item.name}</h3>
+                      <div>
+                        <h3 class="card-title travel-card-title">${item.city}, ${item.province}</h3>
+                        <p class="travel-card-meta">${item.label || item.province}</p>
+                      </div>
                     </div>
-                    <p class="card-text">${item.description}</p>
+                    <p class="card-text">${t(item.description)}</p>
+                    ${
+                      item.photo
+                        ? `<div class="travel-photo-frame">${imgMarkup(item.photo, `${item.city} photo`)}</div>`
+                        : `<div class="travel-note">${isZh() ? "照片位已预留，可后续补充。" : "Photo slot reserved for future updates."}</div>`
+                    }
                   </article>`
                 )
                 .join("")}
             </div>
           </div>
         </section>
+
+        ${renderLifeGroup("Sports", data.life.sports)}
+        ${renderLifeGroup("Games", data.life.games)}
+        ${renderLifeGroup(isZh() ? "其他兴趣" : "Other Interests", data.life.otherInterests)}
       </main>`
     );
   }
@@ -410,10 +446,6 @@
   function render() {
     const path = normalizePath();
     document.body.innerHTML = routes[path]();
-    document.getElementById("theme-toggle")?.addEventListener("click", () => {
-      root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
-      localStorage.setItem("wzy-theme", root.dataset.theme);
-    });
     document.getElementById("lang-toggle")?.addEventListener("click", () => {
       root.lang = root.lang.startsWith("zh") ? "en" : "zh-CN";
       localStorage.setItem("wzy-lang", root.lang);
@@ -433,20 +465,20 @@
       const map = window.L.map(mapNode, {
         zoomControl: true,
         attributionControl: true
-      }).setView(data.travelMap.center, data.travelMap.zoom);
-      window.L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      }).setView([data.life.map.center.lat, data.life.map.center.lng], data.life.map.zoom);
+      window.L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
         maxZoom: 18,
-        attribution: "&copy; OpenStreetMap contributors"
+        attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
       }).addTo(map);
-      (data.travelMap.entries || []).forEach((entry) => {
+      (data.life.map.entries || []).forEach((entry) => {
         const marker = window.L.circleMarker([entry.lat, entry.lng], {
           radius: 7,
-          color: "#ffffff",
-          weight: 1,
-          fillColor: "#7c9cff",
+          color: "#f5f7fa",
+          weight: 1.2,
+          fillColor: "#cfd5dd",
           fillOpacity: 0.9
         }).addTo(map);
-        marker.bindPopup(`<strong>${entry.name}</strong><br/>${entry.description}`);
+        marker.bindPopup(`<strong>${entry.city}, ${entry.province}</strong><br/>${t(entry.description)}`);
       });
     }
 

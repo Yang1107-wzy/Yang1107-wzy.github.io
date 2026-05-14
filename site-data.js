@@ -2,7 +2,6 @@ window.SITE_DATA = {
   identity: {
     fullName: "Zhengyang Wang",
     chineseName: "王正旸",
-    shortTitle: "Research-oriented undergraduate in Computer Science",
     affiliation: "Beijing Normal University - Hong Kong Baptist University (BNBU)",
     location: "Zhuhai, Guangdong, China",
     email: "t330031281@mail.bnbu.edu.cn",
@@ -13,21 +12,38 @@ window.SITE_DATA = {
     cvPdf: "/assets/Zhengyang_WANG_Alvin_CV.pdf",
     profileImage: "/assets/profile-display.webp",
     intro: {
-      en: "I work at the intersection of medical image analysis, multimodal reasoning, sensing systems, and deployable computer vision. My current portfolio spans cardiac ultrasound benchmarking, BLE indoor asset tracking, multimodal metaphor datasets, Olympic archery analytics, and motion-sensor study design.",
-      zh: "我的工作主要围绕医学图像分析、多模态推理、传感系统和可落地的计算机视觉系统展开。当前项目组合覆盖心脏超声分割基准、BLE 室内资产追踪、多模态隐喻 benchmark、奥运备战射箭分析，以及运动健康传感器研究筹备。"
-    },
-    researchInterests: [
-      "Medical Image Analysis",
-      "Computer Vision",
-      "Multimodal LLM Benchmarking",
-      "Indoor Localization & Sensing",
-      "Sports Analytics"
+      en: "I am an undergraduate in Computer Science at BNBU. My current work centers on medical image analysis, computer vision, multimodal reasoning, sensing systems, and the engineering of deployable research prototypes.",
+      zh: "我目前就读于北京师范大学-香港浸会大学联合国际学院（BNBU）计算机科学专业。当前工作主要围绕医学图像分析、计算机视觉、多模态推理、传感系统，以及可落地研究原型的工程实现展开。"
+    }
+  },
+  about: {
+    researchLines: [
+      {
+        en: "Medical image analysis with an emphasis on cardiac ultrasound benchmarking, segmentation protocols, and evidence-traceable evaluation.",
+        zh: "医学图像分析，重点关注心脏超声基准、分割协议与可追溯评测。"
+      },
+      {
+        en: "Computer vision systems for sensing, measurement, and structured decision support in practical environments.",
+        zh: "面向实际场景的计算机视觉系统，包括感知、测量与结构化决策支持。"
+      },
+      {
+        en: "Multimodal reasoning and benchmark construction for metaphor-related generation and analysis tasks.",
+        zh: "面向隐喻相关生成与分析任务的多模态推理与 benchmark 构建。"
+      },
+      {
+        en: "Sports analytics and motion-related data workflows that combine domain operations with technical pipelines.",
+        zh: "结合领域操作与技术流程的体育分析与运动数据工作流。"
+      },
+      {
+        en: "Sensor-supported studies on activity, posture, and behavior analysis.",
+        zh: "基于传感器的活动、姿态与行为分析研究。"
+      }
     ]
   },
   stats: [
-    { label: "Research Tracks", value: "6+" },
-    { label: "Active Year", value: "2026" },
-    { label: "Under Review", value: "NeurIPS line" }
+    { label: "Research Areas", value: "6+" },
+    { label: "Active Projects", value: "8" },
+    { label: "Current Status", value: "Undergraduate Research" }
   ],
   featuredProjects: [
     {
@@ -36,16 +52,25 @@ window.SITE_DATA = {
       status: "Primary Research",
       category: "Medical Imaging",
       image: "/assets/project-cardiac-ultrasound-display.webp",
-      summary: "Unified CAMUS 4CH local-validation benchmark with ST-CardioSeg, MemSAM, CA-Net, MISSFormer, TransUNet, and MT-UNet under a shared evaluation protocol.",
+      summary: {
+        en: "A unified CAMUS 4CH local-validation benchmark covering ST-CardioSeg, MemSAM, CA-Net, MISSFormer, TransUNet, and MT-UNet under a shared evaluation protocol.",
+        zh: "围绕 CAMUS 4CH local validation 搭建的统一评测基准，纳入 ST-CardioSeg、MemSAM、CA-Net、MISSFormer、TransUNet 与 MT-UNet，并使用一致的评测协议。"
+      },
       bullets: [
-        "Main reportable setting is CAMUS 4CH official training subset local validation.",
-        "ST-CardioSeg reaches Dice 0.8902 and ASSD 2.2952 in the current local validation summary.",
-        "The site will distinguish CAMUS ultrasound from the separate ACDC MRI line."
+        {
+          en: "The reportable setting is the CAMUS 4CH official training subset with local validation.",
+          zh: "当前可报告设置为 CAMUS 4CH 官方训练子集上的 local validation。"
+        },
+        {
+          en: "The current local summary records Dice 0.8902 and ASSD 2.2952 for ST-CardioSeg.",
+          zh: "当前本地汇总中，ST-CardioSeg 记录到 Dice 0.8902、ASSD 2.2952。"
+        },
+        {
+          en: "The ultrasound line is kept separate from the ACDC MRI line throughout the site.",
+          zh: "站点中始终将超声线与 ACDC MRI 线区分展示。"
+        }
       ],
-      metrics: ["Dice 0.8902", "HD95 6.6658", "ASSD 2.2952"],
-      links: [
-        { label: "Workspace README", href: "file:///Users/alvin/Desktop/4D%20%E5%8C%BB%E5%AD%A6%E5%9B%BE%E5%83%8F%E5%88%86%E6%9E%90%E9%A1%B9%E7%9B%AE/README.md" }
-      ]
+      metrics: ["Dice 0.8902", "HD95 6.6658", "ASSD 2.2952"]
     },
     {
       slug: "fyp-ble-llm",
@@ -53,16 +78,25 @@ window.SITE_DATA = {
       status: "Current FYP",
       category: "Sensing System",
       image: "/assets/project-fyp-ble-llm-display.webp",
-      summary: "Final year project around BLE-based real-time asset tracking, with LLM modules placed in calibration, anomaly diagnosis, and natural-language operations rather than direct coordinate regression.",
+      summary: {
+        en: "A final year project on BLE-based asset tracking in which LLM modules are positioned in calibration, anomaly diagnosis, and operator-facing interpretation rather than direct coordinate regression.",
+        zh: "一个围绕 BLE 资产追踪展开的毕业设计项目，其中 LLM 模块用于校准、异常诊断与面向操作者的解释，而非直接回归坐标。"
+      },
       bullets: [
-        "Grounded in a BNBU FYP topic focused on indoor asset tracking.",
-        "Targets RSSI-based localization, signal anomaly explanation, and a web dashboard.",
-        "Keeps the定位核心 in reproducible RSSI pipelines instead of handing coordinates to an LLM."
+        {
+          en: "The system focus remains RSSI-based localization and supporting diagnostics.",
+          zh: "系统重点仍然是基于 RSSI 的定位流程及其辅助诊断。"
+        },
+        {
+          en: "The project combines signal processing, system integration, and web-facing presentation.",
+          zh: "项目结合了信号处理、系统集成与面向网页的展示接口。"
+        },
+        {
+          en: "The LLM component is used as a support layer rather than a replacement for the localization engine.",
+          zh: "LLM 组件被定位为辅助层，而不是对定位引擎的替代。"
+        }
       ],
-      metrics: ["BLE RSSI", "Dashboard", "LLM diagnostics"],
-      links: [
-        { label: "FYP Main Draft", href: "file:///Users/alvin/Desktop/FYP/FYP_%E5%AE%A4%E5%86%85%E5%AE%9A%E4%BD%8D_LLM_%E6%95%B4%E5%90%88%E6%80%BB%E7%A8%BF.md" }
-      ]
+      metrics: ["BLE RSSI", "Dashboard", "LLM diagnostics"]
     },
     {
       slug: "metavision-db",
@@ -70,16 +104,25 @@ window.SITE_DATA = {
       status: "Dataset Build",
       category: "Benchmark",
       image: "/assets/project-metavision-db-display.webp",
-      summary: "Dataset substrate for multimodal metaphor generation and reasoning in multi-agent games, with policies, schemas, quotas, provenance logs, validation scripts, and staged image-review workflows.",
+      summary: {
+        en: "A multimodal benchmark line for metaphor-related generation and reasoning games, including schemas, policies, quotas, provenance logs, validation scripts, and staged review workflows.",
+        zh: "一个面向隐喻生成与推理游戏的多模态 benchmark 方向，包含 schema、策略、配额、溯源日志、验证脚本与分阶段审核流程。"
+      },
       bullets: [
-        "Phase 1 benchmark scaffold already includes schemas, protocols, seed tables, and validation.",
-        "Visual Undercover quotas are designed as 50 / 50 / 80 / 50 across four categories.",
-        "Current bottleneck is image generation plus multi-stage manual review, not schema design."
+        {
+          en: "Phase 1 already includes schemas, protocols, seed tables, and validation routines.",
+          zh: "第一阶段已包含 schema、protocol、seed table 与验证流程。"
+        },
+        {
+          en: "Current effort is concentrated on image generation quality control and manual review.",
+          zh: "当前主要精力集中在图像生成质量控制与人工审核。"
+        },
+        {
+          en: "The work is organized around reproducible data handling rather than one-off dataset curation.",
+          zh: "该工作围绕可复现的数据流程组织，而非一次性数据整理。"
+        }
       ],
-      metrics: ["240 rows", "Schema + protocol", "Phase 1 complete"],
-      links: [
-        { label: "MetaVision README", href: "file:///Users/alvin/Desktop/%E9%9A%90%E5%96%BB%E8%AF%AD%E4%B9%89%20LLM%20%E9%A1%B9%E7%9B%AE/MetaVision-DB/README.md" }
-      ]
+      metrics: ["240 rows", "Schema + protocol", "Phase 1 complete"]
     }
   ],
   allProjects: [
@@ -88,90 +131,138 @@ window.SITE_DATA = {
       title: "Competition Arrow Performance Evaluation & Intelligent Selection",
       status: "Ongoing",
       category: "Sports Analytics",
-      summary: "Supports the Olympic key project on smart arrow selection equipment and system R&D for LA 2028 preparation through shooting setup operation, release analysis, impact-score linkage, and straightness tracking.",
+      summary: {
+        en: "A project supporting intelligent arrow selection for competition preparation, involving shooting operations, release analysis, impact-score linkage, and straightness tracking.",
+        zh: "面向比赛备战的智能箭支筛选项目，涉及射击操作、释放分析、落点与分数关联，以及直度跟踪。"
+      },
       metrics: ["High-speed camera", "Trajectory tracking", "LA 2028 prep"],
-      image: "/assets/project-archery-display.webp",
-      accent: "status"
+      image: "/assets/project-archery-display.webp"
     },
     {
       slug: "hydrology",
       title: "Flood Forecasting and Hydrological Modelling",
       status: "Ongoing",
       category: "Remote Sensing + ML",
-      summary: "Processes remote-sensing imagery and builds machine-learning pipelines for station discharge prediction and land-surface runoff integration in collaboration with UIC, Sun Yat-sen University, and Huawei.",
+      summary: {
+        en: "A hydrological modelling line combining remote-sensing imagery, machine-learning pipelines, and discharge prediction tasks.",
+        zh: "一个结合遥感影像、机器学习流程与流量预测任务的水文建模方向。"
+      },
       metrics: ["Remote sensing", "Spatiotemporal ML", "Forecasting"],
-      image: "/assets/project-hydrology-display.webp",
-      accent: "status"
+      image: "/assets/project-hydrology-display.webp"
     },
     {
       slug: "cgf-height",
       title: "RGB-D Cargo Height Estimation (CGF-Height)",
       status: "System + Paper",
       category: "Applied Vision",
-      summary: "Mobile-friendly RGB-D cargo height estimation system using center-guided segmentation and local ground-aware fusion for iOS depth sensing deployment.",
+      summary: {
+        en: "An RGB-D cargo height estimation system for mobile deployment, built around center-guided segmentation and local ground-aware fusion.",
+        zh: "一个面向移动端部署的 RGB-D 货物高度估计系统，核心方法为中心引导分割与局部地面感知融合。"
+      },
       metrics: ["RGB-D", "iOS", "HeightScanner API"],
-      image: "/assets/project-cgf-height-display.webp",
-      accent: "status"
+      image: "/assets/project-cgf-height-display.webp"
     },
     {
       slug: "startup-posture",
       title: "Beijing Undergraduate Innovation Competition on Posture Health",
       status: "In Preparation",
       category: "Startup / Health Tech",
-      summary: "Project line around multimodal sensor-based posture health monitoring, movement-library matching, and real-time feedback optimization, currently represented by technical route maps and single-page materials.",
+      summary: {
+        en: "A posture-health project line focused on multimodal sensing, movement-library matching, and real-time feedback design.",
+        zh: "一个围绕姿态健康展开的大创项目方向，关注多模态感知、动作库匹配与实时反馈设计。"
+      },
       metrics: ["Multimodal sensors", "Posture health", "Route design"],
-      image: "/assets/project-startup-posture-display.webp",
-      accent: "status"
+      image: "/assets/project-startup-posture-display.webp"
     },
     {
       slug: "wearable-sensor",
       title: "ActiGraph-based Motion and Sleep Sensor Study",
       status: "Preparation",
       category: "Sensor Research",
-      summary: "Preparation line focused on ActiGraph devices, 24-hour activity behavior analysis, wear-time validation, sleep screening algorithms, and study protocol design.",
+      summary: {
+        en: "A preparation line on ActiGraph-based activity behavior analysis, sleep screening, and study protocol design.",
+        zh: "一个关于 ActiGraph 设备的研究筹备方向，涉及活动行为分析、睡眠筛查与研究方案设计。"
+      },
       metrics: ["ActiGraph", "24-hour behavior", "Sleep screening"],
-      image: "/assets/project-actigraph-sensor-display.webp",
-      accent: "status"
+      image: "/assets/project-actigraph-sensor-display.webp"
     }
   ],
   news: [
     {
       date: "2026-05-13",
-      title: "Started full rebuild of personal site for wzhengyang.com",
-      text: "The personal site is being rebuilt into a multi-page academic portfolio with bilingual content, data-driven project sections, and full migration of the latest project lines."
+      title: {
+        en: "Personal site structure updated for current research presentation",
+        zh: "个人主页结构更新，用于呈现当前研究内容"
+      },
+      text: {
+        en: "The homepage structure was reorganized to align research, project, publication, and personal sections under a consistent presentation.",
+        zh: "主页结构已重新整理，用于在统一框架下呈现研究、项目、论文与个人部分。"
+      }
     },
     {
       date: "2026-05-08",
-      title: "MetaVision-DB Phase 1 benchmark scaffold audited",
-      text: "Policies, schemas, quotas, provenance logs, validation scripts, and staged review files were confirmed locally; the next bottleneck is full image generation and review."
+      title: {
+        en: "MetaVision-DB Phase 1 scaffold reviewed",
+        zh: "MetaVision-DB 第一阶段框架完成审查"
+      },
+      text: {
+        en: "Policies, schemas, quotas, provenance logs, validation scripts, and staged review files were checked locally.",
+        zh: "已在本地检查相关策略、schema、配额、溯源日志、验证脚本与分阶段审核文件。"
+      }
     },
     {
       date: "2026-05-04",
-      title: "NeurIPS-track cardiac segmentation line remains under review",
-      text: "The existing site already lists the 4D cardiac segmentation paper as under review; the rebuilt site will preserve that status without overstating claims."
+      title: {
+        en: "Cardiac segmentation paper remains under review",
+        zh: "心脏分割论文仍处于审稿阶段"
+      },
+      text: {
+        en: "The current site records the status of the 4D cardiac segmentation work without extending claims beyond the available evidence.",
+        zh: "当前站点仅依据现有证据记录 4D 心脏分割工作的状态，不延伸超出已确认范围的表述。"
+      }
     },
     {
       date: "2026-04-29",
-      title: "CAMUS 4CH local-validation comparison table finalized",
-      text: "ST-CardioSeg, CA-Net, MISSFormer, TransUNet, and MT-UNet were summarized under the same local-validation protocol."
+      title: {
+        en: "CAMUS 4CH local-validation comparison updated",
+        zh: "CAMUS 4CH local validation 对比结果更新"
+      },
+      text: {
+        en: "The comparison summary for ST-CardioSeg, CA-Net, MISSFormer, TransUNet, and MT-UNet was updated under the same evaluation protocol.",
+        zh: "在统一评测协议下更新了 ST-CardioSeg、CA-Net、MISSFormer、TransUNet 与 MT-UNet 的对比汇总。"
+      }
     },
     {
       date: "2026-03-27",
-      title: "FYP indoor localization and LLM plan consolidated",
-      text: "The previously split research pack was folded into a single main draft focused on BLE asset tracking plus LLM-assisted diagnostics."
+      title: {
+        en: "FYP localization draft consolidated",
+        zh: "毕业设计定位方案草稿完成整合"
+      },
+      text: {
+        en: "The indoor localization and LLM-assisted diagnosis plan was consolidated into a single working draft.",
+        zh: "室内定位与 LLM 辅助诊断方案已整理为统一工作草稿。"
+      }
     },
     {
       date: "2025-10-01",
-      title: "Received MCM/ICM Meritorious Winner",
-      text: "Mathematical Contest in Modeling remained one of the most formalized competition outcomes already present in the CV material."
+      title: {
+        en: "MCM/ICM Meritorious Winner recorded",
+        zh: "MCM/ICM Meritorious Winner 奖项记录"
+      },
+      text: {
+        en: "The MCM/ICM result remains one of the formal competition outcomes represented in the current materials.",
+        zh: "MCM/ICM 成绩是当前材料中明确保留的一项正式竞赛成果。"
+      }
     }
   ],
   publications: [
     {
       title: "Decoupling Morphology and Coherence for High-Fidelity 4D Cardiac Segmentation",
       venue: "NeurIPS 2026",
-      note: "Under review",
-      accent: "neurips",
+      note: {
+        en: "Under review",
+        zh: "审稿中"
+      },
       authors: "Ruijie Huang, Weifeng Su, Yuxiang He, Zhengyang Wang, Xingyu Chen, and collaborators",
       image: "/assets/project-cardiac-ultrasound-display.webp",
       links: [
@@ -184,34 +275,52 @@ window.SITE_DATA = {
       {
         period: "2023 - Present",
         title: "BNBU, Computer Science and Technology",
-        text: "Cumulative GPA 3.25/4.00. Coursework includes DSA, Algorithms, OS, DBMS, Machine Learning, Neural Nets and Deep Learning, Software Engineering, Deep Learning for Computer Vision, and 3D Computer Vision."
+        text: {
+          en: "Cumulative GPA 3.25/4.00. Coursework includes data structures, algorithms, operating systems, database systems, machine learning, neural networks, software engineering, deep learning for computer vision, and 3D computer vision.",
+          zh: "累计 GPA 为 3.25/4.00。相关课程包括数据结构、算法、操作系统、数据库系统、机器学习、神经网络与深度学习、软件工程、深度学习与计算机视觉，以及 3D 计算机视觉。"
+        }
       }
     ],
     research: [
       {
         period: "2026",
         title: "Cardiac Ultrasound Benchmark and ST-CardioSeg",
-        text: "Built a shared cardiac ultrasound benchmark package, aligned reportable CAMUS 4CH local-validation protocol, and maintained evidence-traceable metric summaries for segmentation baselines."
+        text: {
+          en: "Built a shared cardiac ultrasound benchmark package, aligned the reportable CAMUS 4CH local-validation protocol, and maintained evidence-traceable metric summaries for segmentation baselines.",
+          zh: "构建了统一的心脏超声 benchmark 包，整理了可报告的 CAMUS 4CH local validation 协议，并维护了可追溯的分割基线指标汇总。"
+        }
       },
       {
         period: "2026",
         title: "MetaVision-DB",
-        text: "Constructed benchmark schemas, policies, quota design, validation scripts, and staged review assets for multimodal metaphor generation and reasoning games."
+        text: {
+          en: "Constructed benchmark schemas, policies, quota design, validation scripts, and staged review assets for multimodal metaphor generation and reasoning games.",
+          zh: "为多模态隐喻生成与推理游戏构建了 benchmark schema、策略、配额设计、验证脚本与分阶段审核材料。"
+        }
       },
       {
         period: "2026",
         title: "BLE Asset Tracking FYP",
-        text: "Defined a realistic BLE RSSI tracking system where LLM modules assist calibration and anomaly diagnosis rather than replace the localization engine."
+        text: {
+          en: "Defined a BLE RSSI tracking system in which LLM modules support calibration and anomaly diagnosis without replacing the localization core.",
+          zh: "设计了一个 BLE RSSI 追踪系统，其中 LLM 模块用于辅助校准与异常诊断，而不替代定位核心。"
+        }
       },
       {
         period: "2025 - Present",
         title: "Competition Arrow Performance Evaluation",
-        text: "Operated shooting experiments, linked kinematic factors to impact points and scores, and supported arrow straightness analysis with vision-based tracking."
+        text: {
+          en: "Participated in shooting experiments, linked kinematic factors to impact points and scores, and supported arrow straightness analysis with vision-based tracking.",
+          zh: "参与射击实验，建立运动学因素与落点分数之间的联系，并利用视觉跟踪支持箭支直度分析。"
+        }
       },
       {
         period: "2025 - Present",
         title: "Flood Forecasting and Hydrological Modelling",
-        text: "Processed remote-sensing data and contributed to machine-learning pipelines for discharge prediction and runoff modeling."
+        text: {
+          en: "Processed remote-sensing data and contributed to machine-learning workflows for discharge prediction and runoff modelling.",
+          zh: "处理遥感数据，并参与面向流量预测与径流建模的机器学习流程。"
+        }
       }
     ],
     awards: [
@@ -220,34 +329,93 @@ window.SITE_DATA = {
     ],
     skills: [
       "Python, Java, C, SQL",
-      "LaTeX, GitHub, AI-assisted research workflows, Office",
+      "LaTeX, GitHub, Office, AI-assisted research workflows",
       "Computer vision prototyping, evaluation pipelines, structured dataset curation"
     ]
   },
-  travelMap: {
-    center: [35.8617, 104.1954],
-    zoom: 4,
-    entries: [
+  life: {
+    overview: {
+      en: "Beyond research work, I also value travel, sports, and everyday interests as part of a sustained personal context rather than a separate showcase.",
+      zh: "除研究工作之外，我也重视旅行、运动与日常兴趣，它们构成了长期个人状态的一部分，而不是与学术完全割裂的展示内容。"
+    },
+    map: {
+      center: { lat: 35.8617, lng: 104.1954 },
+      zoom: 4,
+      intro: {
+        en: "This map records places I have visited in China and can be extended with additional cities, notes, and photos over time.",
+        zh: "这张地图记录了我在中国去过的地点，后续可以继续补充更多城市、说明与照片。"
+      },
+      entries: [
+        {
+          city: "Zhuhai",
+          province: "Guangdong",
+          lat: 22.2710,
+          lng: 113.5767,
+          label: "BNBU",
+          description: {
+            en: "Zhuhai is the main location of my current undergraduate study and daily academic work.",
+            zh: "珠海是我当前本科阶段学习与日常学术工作的主要所在地。"
+          },
+          photo: ""
+        },
+        {
+          city: "Guangzhou",
+          province: "Guangdong",
+          lat: 23.1291,
+          lng: 113.2644,
+          label: "Internship / Travel",
+          description: {
+            en: "Guangzhou is associated with internship experience and repeated city visits over time.",
+            zh: "广州与实习经历以及多次往返的城市活动相关。"
+          },
+          photo: ""
+        },
+        {
+          city: "Beijing",
+          province: "Beijing",
+          lat: 39.9042,
+          lng: 116.4074,
+          label: "Competition / Project Travel",
+          description: {
+            en: "Beijing is linked to project-related travel and competition activity in my recent records.",
+            zh: "北京与我近期记录中的项目出行和竞赛活动相关。"
+          },
+          photo: ""
+        }
+      ]
+    },
+    sports: [
       {
-        name: "Zhuhai, Guangdong",
-        lat: 22.2710,
-        lng: 113.5767,
-        description: "Long-term base around BNBU and daily academic life in southern China.",
-        photo: ""
+        name: "Archery",
+        description: {
+          en: "Archery is both a technical project context and a sustained personal interest connected to training and competition workflows.",
+          zh: "射箭既是技术项目语境的一部分，也是与训练和竞赛流程长期相关的个人兴趣。"
+        }
       },
       {
-        name: "Guangzhou, Guangdong",
-        lat: 23.1291,
-        lng: 113.2644,
-        description: "Bank internship and repeated city visits tied to work and travel.",
-        photo: ""
-      },
+        name: "Ball Sports",
+        description: {
+          en: "This section is reserved for additional sports interests and can be expanded with specific activities later.",
+          zh: "该部分预留给更多运动兴趣，后续可以继续补充具体项目。"
+        }
+      }
+    ],
+    games: [
       {
-        name: "Beijing",
-        lat: 39.9042,
-        lng: 116.4074,
-        description: "Competition and project travel connected to the posture-health innovation line.",
-        photo: ""
+        name: "Games",
+        description: {
+          en: "This section is reserved for games and related interests that may be added in future updates.",
+          zh: "该部分预留给游戏及相关兴趣内容，可在后续更新中继续补充。"
+        }
+      }
+    ],
+    otherInterests: [
+      {
+        name: "Travel Notes",
+        description: {
+          en: "Future updates may add photos, short notes, and further cities to this section while keeping the same structure.",
+          zh: "后续可以在保持当前结构不变的前提下，继续补充照片、简短说明与更多城市。"
+        }
       }
     ]
   }
