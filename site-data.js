@@ -11,7 +11,7 @@ window.SITE_DATA = {
     linkedin: "https://www.linkedin.com/in/%E6%AD%A3%E6%97%B8-%E7%8E%8B-49a128408",
     website: "https://wzhengyang.com",
     cvPdf: "/assets/Zhengyang_WANG_Alvin_CV.pdf",
-    profileImage: "/assets/profile.jpg",
+    profileImage: "/assets/profile-display.webp",
     intro: {
       en: "I work at the intersection of medical image analysis, multimodal reasoning, sensing systems, and deployable computer vision. My current portfolio spans cardiac ultrasound benchmarking, BLE indoor asset tracking, multimodal metaphor datasets, Olympic archery analytics, and motion-sensor study design.",
       zh: "我的工作主要围绕医学图像分析、多模态推理、传感系统和可落地的计算机视觉系统展开。当前项目组合覆盖心脏超声分割基准、BLE 室内资产追踪、多模态隐喻 benchmark、奥运备战射箭分析，以及运动健康传感器研究筹备。"
@@ -35,7 +35,8 @@ window.SITE_DATA = {
       title: "Cardiac Ultrasound Benchmark and ST-CardioSeg",
       status: "Primary Research",
       category: "Medical Imaging",
-      image: "/assets/project-cardiac-ultrasound.png",
+      image: "/assets/project-cardiac-ultrasound-display.webp",
+      accent: "mint",
       summary: "Unified CAMUS 4CH local-validation benchmark with ST-CardioSeg, MemSAM, CA-Net, MISSFormer, TransUNet, and MT-UNet under a shared evaluation protocol.",
       bullets: [
         "Main reportable setting is CAMUS 4CH official training subset local validation.",
@@ -52,7 +53,8 @@ window.SITE_DATA = {
       title: "BLE Asset Tracking with LLM-Assisted Diagnosis",
       status: "Current FYP",
       category: "Sensing System",
-      image: "/assets/project-fyp-ble-llm.png",
+      image: "/assets/project-fyp-ble-llm-display.webp",
+      accent: "blue",
       summary: "Final year project around BLE-based real-time asset tracking, with LLM modules placed in calibration, anomaly diagnosis, and natural-language operations rather than direct coordinate regression.",
       bullets: [
         "Grounded in a BNBU FYP topic focused on indoor asset tracking.",
@@ -69,7 +71,8 @@ window.SITE_DATA = {
       title: "MetaVision-DB for Multimodal Metaphor Games",
       status: "Dataset Build",
       category: "Benchmark",
-      image: "/assets/project-metavision-db.png",
+      image: "/assets/project-metavision-db-display.webp",
+      accent: "amber",
       summary: "Dataset substrate for multimodal metaphor generation and reasoning in multi-agent games, with policies, schemas, quotas, provenance logs, validation scripts, and staged image-review workflows.",
       bullets: [
         "Phase 1 benchmark scaffold already includes schemas, protocols, seed tables, and validation.",
@@ -90,7 +93,8 @@ window.SITE_DATA = {
       category: "Sports Analytics",
       summary: "Supports the Olympic key project on smart arrow selection equipment and system R&D for LA 2028 preparation through shooting setup operation, release analysis, impact-score linkage, and straightness tracking.",
       metrics: ["High-speed camera", "Trajectory tracking", "LA 2028 prep"],
-      image: "/assets/project-archery.png"
+      image: "/assets/project-archery-display.webp",
+      accent: "rose"
     },
     {
       slug: "hydrology",
@@ -99,7 +103,8 @@ window.SITE_DATA = {
       category: "Remote Sensing + ML",
       summary: "Processes remote-sensing imagery and builds machine-learning pipelines for station discharge prediction and land-surface runoff integration in collaboration with UIC, Sun Yat-sen University, and Huawei.",
       metrics: ["Remote sensing", "Spatiotemporal ML", "Forecasting"],
-      image: "/assets/project-hydrology.png"
+      image: "/assets/project-hydrology-display.webp",
+      accent: "cyan"
     },
     {
       slug: "cgf-height",
@@ -108,7 +113,8 @@ window.SITE_DATA = {
       category: "Applied Vision",
       summary: "Mobile-friendly RGB-D cargo height estimation system using center-guided segmentation and local ground-aware fusion for iOS depth sensing deployment.",
       metrics: ["RGB-D", "iOS", "HeightScanner API"],
-      image: "/assets/project-cgf-height.png"
+      image: "/assets/project-cgf-height-display.webp",
+      accent: "violet"
     },
     {
       slug: "startup-posture",
@@ -117,7 +123,8 @@ window.SITE_DATA = {
       category: "Startup / Health Tech",
       summary: "Project line around multimodal sensor-based posture health monitoring, movement-library matching, and real-time feedback optimization, currently represented by technical route maps and single-page materials.",
       metrics: ["Multimodal sensors", "Posture health", "Route design"],
-      image: "/assets/project-startup-posture.png"
+      image: "/assets/project-startup-posture-display.webp",
+      accent: "green"
     },
     {
       slug: "wearable-sensor",
@@ -126,7 +133,8 @@ window.SITE_DATA = {
       category: "Sensor Research",
       summary: "Preparation line focused on ActiGraph devices, 24-hour activity behavior analysis, wear-time validation, sleep screening algorithms, and study protocol design.",
       metrics: ["ActiGraph", "24-hour behavior", "Sleep screening"],
-      image: "/assets/project-actigraph-sensor.png"
+      image: "/assets/project-actigraph-sensor-display.webp",
+      accent: "orange"
     }
   ],
   news: [
@@ -167,7 +175,8 @@ window.SITE_DATA = {
       venue: "NeurIPS 2026",
       note: "Under review",
       authors: "Ruijie Huang, Weifeng Su, Yuxiang He, Zhengyang Wang, Xingyu Chen, and collaborators",
-      image: "/assets/st-net.png",
+      image: "/assets/st-net-display.webp",
+      accent: "neurips",
       links: [
         { label: "OpenReview", href: "https://openreview.net/forum?id=Nw0WyiydFA" }
       ]

@@ -3,14 +3,22 @@
   const root = document.documentElement;
   const savedTheme = localStorage.getItem("wzy-theme");
   const savedLang = localStorage.getItem("wzy-lang");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  root.dataset.theme = savedTheme || (prefersDark ? "dark" : "light");
+  root.dataset.theme = savedTheme || "dark";
   root.lang = savedLang || root.lang || "en";
 
   function t(entry) {
     const lang = root.lang.startsWith("zh") ? "zh" : "en";
     if (typeof entry === "string") return entry;
     return entry?.[lang] || entry?.en || "";
+  }
+
+  function imgMarkup(src, alt, eager = false) {
+    const loading = eager ? "eager" : "lazy";
+    return `<img src="${src}" alt="${alt}" loading="${loading}" decoding="async" />`;
+  }
+
+  function accentClass(value) {
+    return value ? ` accent-${value}` : "";
   }
 
   function nav(pathname) {
@@ -110,9 +118,9 @@
               .map(
                 (project) => `
                 <article class="panel project-card">
-                  <img src="${project.image}" alt="${project.title}" />
-                  <span class="card-tag">${project.status}</span>
-                  <h3 class="card-title">${project.title}</h3>
+                  ${imgMarkup(project.image, project.title, true)}
+                  <span class="card-tag${accentClass(project.accent)}">${project.status}</span>
+                  <h3 class="card-title project-title${accentClass(project.accent)}">${project.title}</h3>
                   <p class="card-text">${project.summary}</p>
                   <div class="metric-row">${project.metrics.map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
                 </article>`
@@ -146,9 +154,9 @@
           </div>
           <aside class="sticky-side">
             <article class="panel publication-card">
-              <img src="${data.publications[0].image}" alt="${data.publications[0].title}" />
+              ${imgMarkup(data.publications[0].image, data.publications[0].title)}
               <div>
-                <span class="card-tag">${data.publications[0].venue}</span>
+                <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
                 <h3 class="card-title">${data.publications[0].title}</h3>
                 <p class="publication-meta">${data.publications[0].authors}</p>
                 <p class="publication-meta" style="margin-top:10px;">${data.publications[0].note}</p>
@@ -227,9 +235,9 @@
               .map(
                 (project) => `
                 <article class="panel project-card">
-                  <img src="${project.image}" alt="${project.title}" />
-                  <span class="card-tag">${project.category} · ${project.status}</span>
-                  <h2 class="card-title">${project.title}</h2>
+                  ${imgMarkup(project.image, project.title)}
+                  <span class="card-tag${accentClass(project.accent)}">${project.category} · ${project.status}</span>
+                  <h2 class="card-title project-title${accentClass(project.accent)}">${project.title}</h2>
                   <p class="card-text">${project.summary}</p>
                   <div class="metric-row">${(project.metrics || []).map((m) => `<span class="metric-pill">${m}</span>`).join("")}</div>
                   ${project.bullets ? `<ul class="card-list" style="margin-top:14px;">${project.bullets.map((b) => `<li>${b}</li>`).join("")}</ul>` : ""}
@@ -291,9 +299,9 @@
             .map(
               (pub) => `
               <article class="panel publication-card">
-                <img src="${pub.image}" alt="${pub.title}" />
+                ${imgMarkup(pub.image, pub.title)}
                 <div>
-                  <span class="card-tag">${pub.venue}</span>
+                  <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
                   <h2 class="card-title">${pub.title}</h2>
                   <p class="publication-meta">${pub.authors}</p>
                   <p class="publication-meta" style="margin-top:10px;">${pub.note}</p>
