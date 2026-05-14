@@ -44,7 +44,7 @@
         <nav class="site-nav">
           <a class="brand-lockup" href="/">
             <span class="brand-title">Zhengyang Wang / 王正旸</span>
-            <span class="brand-subtitle">${isZh() ? "计算机科学本科生" : "Undergraduate in Computer Science"}</span>
+            <span class="brand-subtitle">${data.identity.affiliation}</span>
           </a>
           <div class="nav-links">${nav(pathname)}</div>
           <div class="nav-tools">
@@ -118,7 +118,6 @@
             </div>
           </div>
           <div class="panel hero-copy panel-strong">
-            <span class="eyebrow">${isZh() ? "个人主页" : "Academic Homepage"}</span>
             <h1 class="hero-title">Zhengyang Wang<br />王正旸</h1>
             <p class="hero-kicker">${t(data.identity.intro)}</p>
             <div class="hero-actions">

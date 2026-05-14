@@ -43,7 +43,7 @@ window.SITE_DATA = {
   stats: [
     { label: "Research Areas", value: "6+" },
     { label: "Active Projects", value: "8" },
-    { label: "Current Status", value: "Undergraduate Research" }
+    { label: "Current Focus", value: "Research and Systems" }
   ],
   featuredProjects: [
     {
@@ -191,12 +191,12 @@ window.SITE_DATA = {
     {
       date: "2026-05-13",
       title: {
-        en: "Personal site structure updated for current research presentation",
-        zh: "个人主页结构更新，用于呈现当前研究内容"
+        en: "Research presentation materials updated",
+        zh: "研究展示材料更新"
       },
       text: {
-        en: "The homepage structure was reorganized to align research, project, publication, and personal sections under a consistent presentation.",
-        zh: "主页结构已重新整理，用于在统一框架下呈现研究、项目、论文与个人部分。"
+        en: "The presentation materials were reorganized to align research, project, publication, and personal sections under a consistent structure.",
+        zh: "相关展示材料已重新整理，以统一结构呈现研究、项目、论文与个人部分。"
       }
     },
     {
