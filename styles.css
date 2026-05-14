@@ -257,9 +257,9 @@ select {
 }
 
 .button.primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
 }
 
 .button:hover {
@@ -406,17 +406,32 @@ select {
 
 .publication-card {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 20px;
   align-items: start;
+}
+
+.sidebar-publication-card {
+  grid-template-columns: 1fr;
   padding: 22px;
 }
 
-.publication-card img {
+.sidebar-publication-card img {
   border-radius: 18px;
   width: 100%;
   max-width: 100%;
   aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.publication-list-card {
+  grid-template-columns: 240px minmax(0, 1fr);
+  padding: 22px;
+}
+
+.publication-list-card img {
+  border-radius: 18px;
+  width: 100%;
+  aspect-ratio: 16 / 11;
   object-fit: cover;
 }
 

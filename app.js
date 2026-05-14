@@ -153,7 +153,7 @@
             </div>
           </div>
           <aside class="sticky-side">
-            <article class="panel publication-card">
+            <article class="panel publication-card sidebar-publication-card">
               ${imgMarkup(data.publications[0].image, data.publications[0].title)}
               <div>
                 <span class="card-tag${accentClass(data.publications[0].accent)}">${data.publications[0].venue}</span>
@@ -298,7 +298,7 @@
           ${data.publications
             .map(
               (pub) => `
-              <article class="panel publication-card">
+              <article class="panel publication-card publication-list-card">
                 ${imgMarkup(pub.image, pub.title)}
                 <div>
                   <span class="card-tag${accentClass(pub.accent)}">${pub.venue}</span>
