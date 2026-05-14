@@ -211,6 +211,11 @@ select {
 
 .hero-copy {
   padding: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .eyebrow {
@@ -256,6 +261,12 @@ select {
 .hero-kicker {
   font-size: 1.08rem;
   max-width: 62ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  justify-content: center;
 }
 
 .button {
