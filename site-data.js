@@ -35,14 +35,14 @@ window.SITE_DATA = {
         zh: "结合领域操作与技术流程的体育分析与运动数据工作流。"
       },
       {
-        en: "Sensor-supported studies on activity, posture, and behavior analysis.",
-        zh: "基于传感器的活动、姿态与行为分析研究。"
+        en: "AI-assisted research and engineering workflows for dataset construction, reporting, and lightweight prototype development.",
+        zh: "面向数据集构建、研究报告与轻量原型开发的 AI 辅助研究与工程工作流。"
       }
     ]
   },
   stats: [
     { label: "Research Areas", value: "6+" },
-    { label: "Active Projects", value: "8" },
+    { label: "Active Projects", value: "7" },
     { label: "Current Focus", value: "Research and Systems" }
   ],
   featuredProjects: [
@@ -122,7 +122,7 @@ window.SITE_DATA = {
           zh: "该工作围绕可复现的数据流程组织，而非一次性数据整理。"
         }
       ],
-      metrics: ["240 rows", "Schema + protocol", "Phase 1 complete"]
+      metrics: ["300 pairs", "600 images", "Schema + protocol"]
     }
   ],
   allProjects: [
@@ -164,27 +164,15 @@ window.SITE_DATA = {
     },
     {
       slug: "startup-posture",
-      title: "Beijing Undergraduate Innovation Competition on Posture Health",
-      status: "In Preparation",
-      category: "Startup / Health Tech",
+      title: "Jingcai Dachuang Posture Health Startup Plan",
+      status: "Preliminary Competition",
+      category: "Entrepreneurship Competition",
       summary: {
-        en: "A posture-health project line focused on multimodal sensing, movement-library matching, and real-time feedback design.",
-        zh: "一个围绕姿态健康展开的大创项目方向，关注多模态感知、动作库匹配与实时反馈设计。"
+        en: "An early-stage Beijing university innovation competition plan on motion-sensing posture correction, movement-library matching, and real-time feedback; currently at proposal and PPT level.",
+        zh: "一个北京大学生创新创业竞赛初赛阶段方案，围绕运动传感体态矫正、动作库匹配与实时反馈展开，目前为创业方案与 PPT 阶段。"
       },
-      metrics: ["Multimodal sensors", "Posture health", "Route design"],
+      metrics: ["Startup plan", "Posture feedback", "PPT proposal"],
       image: "/assets/project-startup-posture-display.webp"
-    },
-    {
-      slug: "wearable-sensor",
-      title: "ActiGraph-based Motion and Sleep Sensor Study",
-      status: "Preparation",
-      category: "Sensor Research",
-      summary: {
-        en: "A preparation line on ActiGraph-based activity behavior analysis, sleep screening, and study protocol design.",
-        zh: "一个关于 ActiGraph 设备的研究筹备方向，涉及活动行为分析、睡眠筛查与研究方案设计。"
-      },
-      metrics: ["ActiGraph", "24-hour behavior", "Sleep screening"],
-      image: "/assets/project-actigraph-sensor-display.webp"
     }
   ],
   news: [
@@ -329,7 +317,8 @@ window.SITE_DATA = {
     ],
     skills: [
       "Python, Java, C, SQL",
-      "LaTeX, GitHub, Office, AI-assisted research workflows",
+      "LaTeX, GitHub, Office, technical writing, simple static website prototyping",
+      "AI-assisted research and development with Codex, ChatGPT Pro, Claude, and Gemini",
       "Computer vision prototyping, evaluation pipelines, structured dataset curation"
     ]
   },

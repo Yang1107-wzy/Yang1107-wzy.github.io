@@ -15,7 +15,6 @@ DISPLAY_SPECS = {
     "profile.jpg": ("profile-display.webp", 480, 600),
     "st-net.png": ("st-net-display.webp", 720, 495),
     "startup-posture.png": ("startup-posture-display.webp", 720, 495),
-    "project-actigraph-sensor.png": ("project-actigraph-sensor-display.webp", 720, 495),
     "project-archery.png": ("project-archery-display.webp", 720, 495),
     "project-cardiac-ultrasound.png": ("project-cardiac-ultrasound-display.webp", 720, 495),
     "project-cgf-height.png": ("project-cgf-height-display.webp", 720, 495),
