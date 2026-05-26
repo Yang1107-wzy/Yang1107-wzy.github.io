@@ -9,7 +9,7 @@ window.SITE_DATA = {
     github: "https://github.com/Yang1107-wzy",
     linkedin: "https://www.linkedin.com/in/%E6%AD%A3%E6%97%B8-%E7%8E%8B-49a128408",
     website: "https://wzhengyang.com",
-    cvPdf: "/assets/Zhengyang_WANG_Alvin_CV.pdf",
+    cvPdf: "/assets/Zhengyang_WANG_Alvin_CV_RenderCV_2026.pdf",
     profileImage: "/assets/profile-display.webp",
     intro: {
       en: "I am an undergraduate in Computer Science at BNBU. My current work centers on medical image analysis, computer vision, multimodal reasoning, sensing systems, and the engineering of deployable research prototypes.",
