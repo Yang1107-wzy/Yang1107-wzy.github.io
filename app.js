@@ -97,17 +97,23 @@
   function renderPublication(pub, compact = false) {
     const extraClass = compact ? "sidebar-publication-card" : "publication-list-card";
     const titleTag = compact ? "h3" : "h2";
+    const tag = [pub.venue, pub.status].filter(Boolean).join(" · ");
+    const links = pub.links || [];
     return `
       <article class="panel publication-card ${extraClass}">
         ${imgMarkup(pub.image, pub.title)}
         <div>
-          <span class="card-tag">${pub.venue}</span>
+          <span class="card-tag">${tag}</span>
           <${titleTag} class="card-title publication-title">${pub.title}</${titleTag}>
           <p class="publication-meta">${pub.authors}</p>
+          ${pub.date ? `<p class="publication-meta" style="margin-top:8px;">${pub.date}</p>` : ""}
           <p class="publication-meta" style="margin-top:10px;">${t(pub.note)}</p>
-          <div class="link-row">
-            ${pub.links.map((link) => `<a class="button" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}
-          </div>
+          ${pub.summary ? `<p class="card-text" style="margin-top:10px;">${t(pub.summary)}</p>` : ""}
+          ${
+            links.length
+              ? `<div class="link-row">${links.map((link) => `<a class="button" href="${link.href}" target="_blank" rel="noreferrer">${link.label}</a>`).join("")}</div>`
+              : ""
+          }
         </div>
       </article>
     `;
@@ -309,8 +315,22 @@
             <div class="panel detail-card panel-strong">
               <h2 class="card-title">${isZh() ? "教育经历" : "Education"}</h2>
               ${data.cv.education.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`).join("")}
+              ${
+                data.cv.publications
+                  ? `<h2 class="card-title">${isZh() ? "论文与投稿" : "Publications and Submissions"}</h2>${data.cv.publications
+                      .map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`)
+                      .join("")}`
+                  : ""
+              }
               <h2 class="card-title">${isZh() ? "研究与项目" : "Research and Projects"}</h2>
               ${data.cv.research.map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`).join("")}
+              ${
+                data.cv.campusLeadership
+                  ? `<h2 class="card-title">${isZh() ? "校园经历" : "Campus Leadership"}</h2>${data.cv.campusLeadership
+                      .map((item) => `<div style="margin-bottom:20px;"><div class="card-tag">${item.period}</div><h3 class="card-title">${item.title}</h3><p class="card-text">${t(item.text)}</p></div>`)
+                      .join("")}`
+                  : ""
+              }
             </div>
             <div class="panel detail-card">
               <h2 class="card-title">${isZh() ? "奖项" : "Awards"}</h2>

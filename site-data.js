@@ -177,6 +177,17 @@ window.SITE_DATA = {
   ],
   news: [
     {
+      date: "2026-05",
+      title: {
+        en: "Bronze Award of Servant Leadership received",
+        zh: "获得学生领袖成长计划 Servant Leadership 铜章奖"
+      },
+      text: {
+        en: "Received the BNBU Student Leadership Path Programme Bronze Award of Servant Leadership from the Student Affairs Office for the 2025-26 academic year.",
+        zh: "获得 BNBU 学生事务处颁发的 2025-26 学年学生领袖成长计划 Servant Leadership 铜章奖。"
+      }
+    },
+    {
       date: "2026-05-13",
       title: {
         en: "Research presentation materials updated",
@@ -246,16 +257,39 @@ window.SITE_DATA = {
   publications: [
     {
       title: "Decoupling Morphology and Coherence for High-Fidelity 4D Cardiac Segmentation",
-      venue: "NeurIPS 2026",
+      venue: "NeurIPS 2026 Conference Submission",
+      status: "Under review",
+      date: "Submitted 04 May 2026; modified 22 May 2026",
       note: {
-        en: "Under review",
-        zh: "审稿中"
+        en: "Under review on OpenReview. Submission Number 21504.",
+        zh: "OpenReview 在审中。Submission Number 21504。"
+      },
+      summary: {
+        en: "A 4D cardiac MRI segmentation submission focused on morphology extraction, temporal attention recalibration, and spatio-temporal smoothness regularization.",
+        zh: "一篇面向 4D cardiac MRI segmentation 的投稿，关注 morphology extraction、temporal attention recalibration 与 spatio-temporal smoothness regularization。"
       },
       authors: "Ruijie Huang, Weifeng Su, Yuxiang He, Zhengyang Wang, Xingyu Chen, and collaborators",
       image: "/assets/project-cardiac-ultrasound-display.webp",
       links: [
         { label: "OpenReview", href: "https://openreview.net/forum?id=Nw0WyiydFA" }
       ]
+    },
+    {
+      title: "Orchestrating Secrets: Visual Metaphor Generation and Reasoning in Multi-Agent Communication Games",
+      venue: "ARR",
+      status: "Submitted",
+      date: "Submitted May 2026",
+      note: {
+        en: "Submitted to ARR, May 2026.",
+        zh: "已于 2026 年 5 月投稿 ARR。"
+      },
+      summary: {
+        en: "A multimodal metaphor generation and reasoning submission built around MetaVision-DB and multi-agent communication-game evaluation.",
+        zh: "一篇围绕 MetaVision-DB 与多智能体通信游戏评测展开的多模态隐喻生成与推理投稿。"
+      },
+      authors: "Zhengyang Wang and collaborators",
+      image: "/assets/project-metavision-db-display.webp",
+      links: []
     }
   ],
   cv: {
@@ -266,6 +300,24 @@ window.SITE_DATA = {
         text: {
           en: "Cumulative GPA 3.25/4.00. Coursework includes data structures, algorithms, operating systems, database systems, machine learning, neural networks, software engineering, deep learning for computer vision, and 3D computer vision.",
           zh: "累计 GPA 为 3.25/4.00。相关课程包括数据结构、算法、操作系统、数据库系统、机器学习、神经网络与深度学习、软件工程、深度学习与计算机视觉，以及 3D 计算机视觉。"
+        }
+      }
+    ],
+    publications: [
+      {
+        period: "2026",
+        title: "Decoupling Morphology and Coherence for High-Fidelity 4D Cardiac Segmentation",
+        text: {
+          en: "NeurIPS 2026 Conference Submission, under review on OpenReview. Submission Number 21504.",
+          zh: "NeurIPS 2026 Conference Submission，OpenReview 在审中。Submission Number 21504。"
+        }
+      },
+      {
+        period: "2026",
+        title: "Orchestrating Secrets: Visual Metaphor Generation and Reasoning in Multi-Agent Communication Games",
+        text: {
+          en: "Submitted to ARR, May 2026.",
+          zh: "已于 2026 年 5 月投稿 ARR。"
         }
       }
     ],
@@ -311,7 +363,34 @@ window.SITE_DATA = {
         }
       }
     ],
+    campusLeadership: [
+      {
+        period: "2025 - 2026",
+        title: "Deputy Minister, Rights and Services Department, BNBU Student Union",
+        text: {
+          en: "Supported student rights services, feedback organization, activity execution, and cross-student communication.",
+          zh: "参与学生权益服务、需求反馈整理、活动推进和跨学生群体沟通。"
+        }
+      },
+      {
+        period: "2024 - 2025",
+        title: "Organization Committee Member, Youth League Branch",
+        text: {
+          en: "Assisted branch organization, announcements, coordination, and activity execution.",
+          zh: "协助团支部组织事务、通知协调和活动执行。"
+        }
+      },
+      {
+        period: "2024 - 2025",
+        title: "Co-founder, BNBU Volleyball Club",
+        text: {
+          en: "Helped initiate the club from 0 to 1, supporting recruitment, training organization, and community operations.",
+          zh: "参与排球社从 0 到 1 发起，支持成员招募、训练组织和社群运营。"
+        }
+      }
+    ],
     awards: [
+      "BNBU Student Leadership Path Programme, Bronze Award of Servant Leadership, 2025-26 Academic Year / May 2026",
       "Mathematical Contest in Modeling (MCM/ICM), Meritorious Winner, 2025",
       "ICBC Cup Business Competition, Excellence Award"
     ],
