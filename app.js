@@ -82,6 +82,17 @@
     `;
   }
 
+  function renderCourseProjectCard(project) {
+    return `
+      <article class="panel project-card">
+        <span class="card-tag">${isZh() ? "课程小组项目" : "Course group project"}</span>
+        <h3 class="card-title project-title">${t(project.title)}</h3>
+        <p class="card-text">${t(project.summary)}</p>
+        <a class="text-link" href="${project.url}" target="_blank" rel="noreferrer">${isZh() ? "查看仓库与成果" : "View repository and artifacts"}</a>
+      </article>
+    `;
+  }
+
   function renderHomeProjectCard(project, eager = false) {
     return `
       <article class="panel home-project-card">
@@ -244,6 +255,17 @@
           </div>
           <div class="grid-2">
             ${projects.map((project) => renderProjectCard(project, "h2")).join("")}
+          </div>
+        </section>
+        <section class="section" id="course-projects">
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">${isZh() ? "课程项目" : "Course Projects"}</h2>
+              <p class="section-description">${isZh() ? "五门课程的小组成果，各仓库提供完整中英双语说明、原始成果与贡献边界。" : "Five course group projects, each with bilingual documentation, project artifacts, and a clear contribution statement."}</p>
+            </div>
+          </div>
+          <div class="grid-2">
+            ${data.courseProjects.map((project) => renderCourseProjectCard(project)).join("")}
           </div>
         </section>
       </main>`
