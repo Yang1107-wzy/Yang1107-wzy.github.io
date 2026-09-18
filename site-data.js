@@ -175,6 +175,48 @@ window.SITE_DATA = {
       image: "/assets/project-startup-posture-display.webp"
     }
   ],
+  courseProjects: [
+    {
+      title: { en: "Factor Regression and Portfolio Returns", zh: "投资组合收益的因子回归分析" },
+      summary: {
+        en: "Probability and Statistics group project. My documented section compares market and profitability factors using simple regression and interval estimates.",
+        zh: "概率统计小组项目。现有展示明确标注我负责市场因子与盈利能力因子的回归比较及区间估计。"
+      },
+      url: "https://github.com/Yang1107-wzy/probability-statistics-factor-regression"
+    },
+    {
+      title: { en: "Constant-Feed-Rate Bézier Motion", zh: "贝塞尔路径的近似恒速运动" },
+      summary: {
+        en: "Numerical Computation group project with adaptive Simpson integration, safeguarded inversion, Python simulation, and synthetic-curve validation.",
+        zh: "数值计算小组项目，包含自适应 Simpson 积分、带保护措施的反求过程、Python 仿真与合成曲线验证。"
+      },
+      url: "https://github.com/Yang1107-wzy/numerical-computation-cnc-path-control"
+    },
+    {
+      title: { en: "Next-Day Flow Mapping", zh: "次日流量二维网格预测" },
+      summary: {
+        en: "Machine Learning course report and presentation on multi-source inputs and a fully convolutional model. Course results are reported, not independently replayed here.",
+        zh: "机器学习课程报告与展示，研究多源输入和全卷积模型；课程结果未在此独立重放。"
+      },
+      url: "https://github.com/Yang1107-wzy/machine-learning-grid-flood-forecasting"
+    },
+    {
+      title: { en: "Blood Glucose Forecasting", zh: "血糖时间序列预测" },
+      summary: {
+        en: "Neural Networks course group benchmark. The report identifies me as team leader and assigns my presentation section to the Transformer model.",
+        zh: "神经网络课程小组基准实验。报告记载我是组长，并负责 Transformer 模型展示部分。"
+      },
+      url: "https://github.com/Yang1107-wzy/neural-networks-glucose-forecasting"
+    },
+    {
+      title: { en: "Mentor Caring System SRS", zh: "Mentor Caring System 需求规格说明" },
+      summary: {
+        en: "Software Engineering group requirements document, diagrams, and LaTeX source for a proposed system; it does not claim a deployed application.",
+        zh: "软件工程小组的需求文档、图表与 LaTeX 源码，描述拟议系统，不代表系统已经部署。"
+      },
+      url: "https://github.com/Yang1107-wzy/software-engineering-mentor-caring-srs"
+    }
+  ],
   news: [
     {
       date: "2026-05",
