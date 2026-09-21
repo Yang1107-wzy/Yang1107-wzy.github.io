@@ -1,0 +1,5 @@
+# Third-party acknowledgements
+
+This website is adapted from [Magic UI Portfolio](https://github.com/magicuidesign/portfolio), commit `5ef12e4c8bd0de3e22e89c2181ee77a35925ec8b`, copyright (c) 2024 Dillion Verma, MIT. The original license is retained in LICENSE. Reused architecture: Next.js App Router, React, Tailwind, typed data, shadcn/Radix UI primitives, Motion. Adapted components include `src/components/magicui/dock.tsx`, `src/components/magicui/blur-fade.tsx`, and `src/components/project-card.tsx`; shared `src/lib/utils.ts` and UI primitives retain the original implementation. The new bilingual information architecture, case studies, visual theme, navigation, accessibility behavior, and static export are customizations of this template.
+
+Personal text, photographs, CV, and research figures are Zhengyang Wang's content and are not automatically licensed under the upstream template's MIT code license. Third-party research dependencies retain their respective licenses. See asset provenance before reuse.
