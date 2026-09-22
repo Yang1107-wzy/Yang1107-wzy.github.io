@@ -16,6 +16,16 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/about/" />
 </url>
 <url>
+<loc>https://wzhengyang.com/en/news/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/news/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/news/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/en/life/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/life/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/life/" />
+</url>
+<url>
 <loc>https://wzhengyang.com/en/projects/intelligent-arrow-selection/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/intelligent-arrow-selection/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/intelligent-arrow-selection/" />
@@ -64,6 +74,16 @@
 <loc>https://wzhengyang.com/zh/about/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/about/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/about/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/zh/news/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/news/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/news/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/zh/life/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/life/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/life/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/zh/projects/intelligent-arrow-selection/</loc>
