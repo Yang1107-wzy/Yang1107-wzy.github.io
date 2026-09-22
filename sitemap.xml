@@ -26,9 +26,9 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/life/" />
 </url>
 <url>
-<loc>https://wzhengyang.com/en/projects/intelligent-arrow-selection/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/intelligent-arrow-selection/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/intelligent-arrow-selection/" />
+<loc>https://wzhengyang.com/en/projects/mapagent/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/mapagent/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/mapagent/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/en/projects/metroheight/</loc>
@@ -36,19 +36,14 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/metroheight/" />
 </url>
 <url>
+<loc>https://wzhengyang.com/en/projects/post-fire-recovery/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/post-fire-recovery/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/post-fire-recovery/" />
+</url>
+<url>
 <loc>https://wzhengyang.com/en/projects/flood-forecasting/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/flood-forecasting/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/flood-forecasting/" />
-</url>
-<url>
-<loc>https://wzhengyang.com/en/projects/visual-metaphor/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/visual-metaphor/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/visual-metaphor/" />
-</url>
-<url>
-<loc>https://wzhengyang.com/en/projects/mapagent/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/mapagent/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/mapagent/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/en/projects/st-net/</loc>
@@ -56,9 +51,14 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/st-net/" />
 </url>
 <url>
-<loc>https://wzhengyang.com/en/projects/post-fire-recovery/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/post-fire-recovery/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/post-fire-recovery/" />
+<loc>https://wzhengyang.com/en/projects/visual-metaphor/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/visual-metaphor/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/visual-metaphor/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/en/projects/intelligent-arrow-selection/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/intelligent-arrow-selection/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/intelligent-arrow-selection/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/zh/</loc>
@@ -86,9 +86,9 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/life/" />
 </url>
 <url>
-<loc>https://wzhengyang.com/zh/projects/intelligent-arrow-selection/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/intelligent-arrow-selection/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/intelligent-arrow-selection/" />
+<loc>https://wzhengyang.com/zh/projects/mapagent/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/mapagent/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/mapagent/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/zh/projects/metroheight/</loc>
@@ -96,19 +96,14 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/metroheight/" />
 </url>
 <url>
+<loc>https://wzhengyang.com/zh/projects/post-fire-recovery/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/post-fire-recovery/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/post-fire-recovery/" />
+</url>
+<url>
 <loc>https://wzhengyang.com/zh/projects/flood-forecasting/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/flood-forecasting/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/flood-forecasting/" />
-</url>
-<url>
-<loc>https://wzhengyang.com/zh/projects/visual-metaphor/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/visual-metaphor/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/visual-metaphor/" />
-</url>
-<url>
-<loc>https://wzhengyang.com/zh/projects/mapagent/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/mapagent/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/mapagent/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/zh/projects/st-net/</loc>
@@ -116,8 +111,13 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/st-net/" />
 </url>
 <url>
-<loc>https://wzhengyang.com/zh/projects/post-fire-recovery/</loc>
-<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/post-fire-recovery/" />
-<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/post-fire-recovery/" />
+<loc>https://wzhengyang.com/zh/projects/visual-metaphor/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/visual-metaphor/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/visual-metaphor/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/zh/projects/intelligent-arrow-selection/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/intelligent-arrow-selection/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/intelligent-arrow-selection/" />
 </url>
 </urlset>
