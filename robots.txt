@@ -1,4 +1,8 @@
 User-Agent: *
 Allow: /
+Disallow: /en/apply/manage/
+Disallow: /zh/apply/manage/
+Disallow: /en/apply/auth/
+Disallow: /zh/apply/auth/
 
 Sitemap: https://wzhengyang.com/sitemap.xml
