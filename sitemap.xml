@@ -31,6 +31,11 @@
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/apply/" />
 </url>
 <url>
+<loc>https://wzhengyang.com/en/apply/privacy/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/apply/privacy/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/apply/privacy/" />
+</url>
+<url>
 <loc>https://wzhengyang.com/en/projects/mapagent/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/projects/mapagent/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/projects/mapagent/" />
@@ -94,6 +99,11 @@
 <loc>https://wzhengyang.com/zh/apply/</loc>
 <xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/apply/" />
 <xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/apply/" />
+</url>
+<url>
+<loc>https://wzhengyang.com/zh/apply/privacy/</loc>
+<xhtml:link rel="alternate" hreflang="en" href="https://wzhengyang.com/en/apply/privacy/" />
+<xhtml:link rel="alternate" hreflang="zh-CN" href="https://wzhengyang.com/zh/apply/privacy/" />
 </url>
 <url>
 <loc>https://wzhengyang.com/zh/projects/mapagent/</loc>
