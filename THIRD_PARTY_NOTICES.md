@@ -4,6 +4,10 @@ This website is adapted from [Magic UI Portfolio](https://github.com/magicuidesi
 
 Personal text, photographs, CV, and research figures are Zhengyang Wang's content and are not automatically licensed under the upstream template's MIT code license. Third-party research dependencies retain their respective licenses. See asset provenance before reuse.
 
+## Research sketch fonts
+
+The research titles use Kalam Bold and short figure annotations use Patrick Hand. Both fonts are bundled locally under the SIL Open Font License 1.1; the complete notices are retained at `public/fonts/LICENSE-Kalam.txt` and `public/fonts/LICENSE-PatrickHand.txt`. The hand-drawn research illustrations were created with AI assistance and reviewed against project materials. Original art, editable layers, prompts and source notes are retained in the private revision workspace; the public site includes only reviewed WebP illustrations and bilingual explanations.
+
 ## Leaflet and OpenStreetMap
 
 Life uses [Leaflet 1.9.4](https://leafletjs.com/) under the following BSD 2-Clause licence. Map data © [OpenStreetMap contributors](https://www.openstreetmap.org/copyright); tiles are requested from the standard OpenStreetMap service with visible attribution and subject to its [tile usage policy](https://operations.osmfoundation.org/policies/tiles/).
