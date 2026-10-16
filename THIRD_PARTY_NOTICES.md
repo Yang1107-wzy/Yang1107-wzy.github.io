@@ -42,3 +42,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ```
 
 The academic section layout takes visual inspiration from [Guantao Chen’s personal homepage](https://www.chenguantao.com/). Its code, personal copy and photographs are not copied.
+
+
+## University of Edinburgh mark
+
+The unmodified university crest at `public/images/universities/edinburgh.svg` comes from the University of Edinburgh Business School [official pattern library](https://apps.business-school.ed.ac.uk/pl/patterns/02-basics-images-logos/02-basics-images-logos.rendered.html), retrieved on 16 October 2026. It identifies the institution in the application tracker; rights remain with the University of Edinburgh.
